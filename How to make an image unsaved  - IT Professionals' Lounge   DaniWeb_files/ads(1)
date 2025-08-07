@@ -1,0 +1,29 @@
+{
+
+var google_ads = new Array();
+var google_ad;
+var google_radlinks = new Array();
+var google_radlink;
+var google_info = new Object();
+google_ad = new Object(); 
+google_ad.n = 1; 
+google_ad.type = "text"; 
+google_ad.bidtype = "CPC"; 
+google_ad.targeting_type = "contextual"; 
+google_ad.url = "http://www.googleadservices.com/pagead/aclk?sa=L&amp;ai=BSp7Ep5saT__MD9HM-Abz8q39C5L-tBrGqb3vAsCNtwGw2wYQARgBII-q9QE4AFC0wcDI-f____8BYIOt44WgHKAByNWB_wOyAQ93d3cuZGFuaXdlYi5jb226AQk3Mjh4OTBfanPIAQHaAVVodHRwOi8vd3d3LmRhbml3ZWIuY29tL2NvbW11bml0eS1jZW50ZXIvaXQtcHJvZmVzc2lvbmFscy1sb3VuZ2UvdGhyZWFkcy8xMzA4MjQvNjQ1ODg5gAIBqAMB9QMAAQDE9QMAAAAQiAYB&amp;num=1&amp;cid=5Ghkmoq-K3UXllzumJVa9vFN&amp;sig=AOD64_3RbBMWnzRNb9ggYj1ohHNp01Fqkg&amp;client=ca-pub-8426641637123945&amp;adurl=http://www.gobosource.com"; 
+google_ad.visible_url = "www.GoboSource.com"; 
+google_ad.line1 = "Project Your Image"; 
+google_ad.line2 = "Turnkey Image Projection Solutions"; 
+google_ad.line3 = "Perfect for Advertising and Events."; 
+google_ad.regionname = ""; 
+google_ads[0] = google_ad; 
+google_info.feedback_url = "http://www.google.com/url?ct\x3dabg\x26q\x3dhttps://www.google.com/adsense/support/bin/request.py%3Fcontact%3Dabg_afc%26url%3Dhttp://www.daniweb.com/community-center/it-professionals-lounge/threads/130824/645889%26hl%3Den%26client%3Dca-pub-8426641637123945%26adU%3Dwww.GoboSource.com%26adT%3DProject%2BYour%2BImage%26gl%3DRO\x26usg\x3dAFQjCNFN7Me7IqP01cXy8NzYFePIjFBXww";
+var google_attribution_text = "AdChoices";
+var google_is_rtl = false;
+if (window.google_ad_request_done) {
+google_ad_request_done(google_ads);
+}
+if (window.google_radlink_request_done) {
+google_radlink_request_done(google_radlinks);
+}
+}

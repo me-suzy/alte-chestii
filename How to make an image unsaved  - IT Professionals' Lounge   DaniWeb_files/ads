@@ -1,0 +1,29 @@
+{
+
+var google_ads = new Array();
+var google_ad;
+var google_radlinks = new Array();
+var google_radlink;
+var google_info = new Object();
+google_ad = new Object(); 
+google_ad.n = 1; 
+google_ad.type = "text"; 
+google_ad.bidtype = "CPC"; 
+google_ad.targeting_type = "site"; 
+google_ad.url = "http://www.googleadservices.com/pagead/aclk?sa=L&amp;ai=Bh8PDppsaT9CsKsTb-gbL-ZGGDN2DgO0BxYmihBWDk6O-B6CNBhABGAEgj6r1ATgAUJGZ78wHYIOt44WgHKAB3Z6U_wOyAQ93d3cuZGFuaXdlYi5jb226AQk3Mjh4OTBfanPIAQHaAVVodHRwOi8vd3d3LmRhbml3ZWIuY29tL2NvbW11bml0eS1jZW50ZXIvaXQtcHJvZmVzc2lvbmFscy1sb3VuZ2UvdGhyZWFkcy8xMzA4MjQvNjQ1ODg5gAIBwAIBqAMB9QMAAQDE9QMAAAAQiAYB&amp;num=1&amp;cid=5GgyYoREIR408hyPVDesIQ_O&amp;sig=AOD64_3bpb4H0M8cDR5700JFWUP3lU-wzQ&amp;client=ca-pub-8426641637123945&amp;adurl=http://www2.smartbear.com/cc-aw-int-codereview.html"; 
+google_ad.visible_url = "www2.SmartBear.com/30_Day_Trial"; 
+google_ad.line1 = "Source Code Review Tool"; 
+google_ad.line2 = "Reduce Support Cost with Source"; 
+google_ad.line3 = "Code Reviews. Download Trial Now!"; 
+google_ad.regionname = ""; 
+google_ads[0] = google_ad; 
+google_info.feedback_url = "http://www.google.com/url?ct\x3dabg\x26q\x3dhttps://www.google.com/adsense/support/bin/request.py%3Fcontact%3Dabg_afc%26url%3Dhttp://www.daniweb.com/community-center/it-professionals-lounge/threads/130824/645889%26hl%3Den%26client%3Dca-pub-8426641637123945%26adU%3Dwww2.SmartBear.com/30_Day_Trial%26adT%3DSource%2BCode%2BReview%2BTool%26gl%3DRO\x26usg\x3dAFQjCNG8gpWENlt3kmLx7c1_G3gKmejyMg";
+var google_attribution_text = "AdChoices";
+var google_is_rtl = false;
+if (window.google_ad_request_done) {
+google_ad_request_done(google_ads);
+}
+if (window.google_radlink_request_done) {
+google_radlink_request_done(google_radlinks);
+}
+}
