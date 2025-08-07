@@ -1,0 +1,95 @@
+<link rel=alternate media=print href="printversion.doc">
+
+
+
+
+
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Disable text selection in webpage using javascript
+June 6, 2010 in Javascript
+
+In many cases you may need to disable text selection in web page. Where you have drag n drop enabled, you might not want to see that your text get selected when your draggin an item. You can do this easily using this this function.
+
+
+// this function disables text select on a perticular dom object
+function disableSelection(target)
+{
+    if (typeof target.onselectstart!="undefined") //IE route
+        target.onselectstart=function(){return false}
+    else if (typeof target.style.MozUserSelect!="undefined") //Firefox route
+        target.style.MozUserSelect="none"
+    else //All other route (ie: Opera)
+        target.onmousedown=function(){return false}
+    target.style.cursor = "default"
+}
+Now if you want to disable selection on completely on your page you can select the “document” object and disable selection
+
+1
+disableSelection(document)
+If you want to disable selection on a particular area such div do this
+
+1
+2
+var div = document.getElementById('my_div');
+disableSelection(div)
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Place the following WITHIN THE HEAD SECTION of an HTML page.
+This disables text selection, disables the right-click pop-up menu
+and will cause only blank pages to be printed when user selects "print"
+(for which you need to place the file "print.css" in the same folder).
+
+================================================== ===============
+
+<link rel="stylesheet" type="text/css" href="print.css" media="print">
+
+<script language="JavaScript">
+
+function disableselect(e)
+{
+    return false
+}
+
+function reEnable()
+{
+    return true
+}
+
+document.onselectstart=new Function ("return false")
+
+//if NS6
+if (window.sidebar)
+{
+    document.onmousedown=disableselect
+    document.onclick=reEnable
+}
+
+function rightclick() 
+{
+    if (event.button==2) 
+    {
+        alert("menu disabled")
+    }
+}
+
+document.onmousedown=rightclick
+
+</script>
+
+================================================== ===============
+
+print.css is a separate file containing this:
+
+body {
+display: none;
+visibility: hidden;
+}
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

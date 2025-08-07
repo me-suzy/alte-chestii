@@ -1,0 +1,7 @@
+The following script disables the mouse right-click.
+
+
+
+<script>
+   document.oncontextmenu=function() { return false; }
+</script>

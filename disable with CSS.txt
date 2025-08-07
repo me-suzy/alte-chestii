@@ -1,0 +1,31 @@
+To prevent printing insert these commands in the main stylesheet:
+
+media print{
+body {display:none;}
+}
+
+
+To prevent text from being selected, the text can be placed inside <div></div> tags
+
+<div onselectstart="return false;" unselectable="on;" style="-moz-user-select: none;">
+Text that can not be selected.
+</div>
+
+
+
+Place a CSS layer over the top of an image. When the visitor right-clicks on the image, they'll actually be clicking on the layer instead of the image.
+
+To disable the clipboard, add the following code inside the <body></body> tags:
+
+
+onload=setinterval("window.clipboarddata.cleardata ()", 20)
+
+
+The disabled clipboard remains active until that browser window is closed, affecting other programs.
+
+
+
+
+
+
+<!-- <body bgcolor="#FFFFFF" ondragstart="return false" onselectstart="return false"> -->

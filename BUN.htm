@@ -1,0 +1,56 @@
+<html>
+<head>
+</head>
+
+<script type="text/javascript">
+<!--
+/******************************************************************************
+***   COPY PROTECTED BY CHETANGOLE.COM/BLOG/WP-COPYPROTECT   version 2.2.0 ****
+******************************************************************************/
+var message="Drepturi de autor. Nu puteti copia acest. Pentru articol(e) trimite-ti un e-mail la adresa dragos@fara-secrete.ro in care sa cereti articolul(e) respectiv(e). Multumesc!";
+function clickIE4(){
+if (event.button==2){
+alert(message);
+return false;
+}
+}
+
+function clickNS4(e){
+if (document.layers||document.getElementById&&!document.all){
+if (e.which==2||e.which==3){
+alert(message);
+return false;
+}
+}
+}
+
+if (document.layers){
+document.captureEvents(Event.MOUSEDOWN);
+document.onmousedown=clickNS4;
+}
+else if (document.all&&!document.getElementById){
+document.onmousedown=clickIE4;
+}
+document.oncontextmenu=new Function("alert(message);return false")
+// --> 
+</script>
+
+<script type="text/javascript">
+
+function disableSelection(target){
+if (typeof target.onselectstart!="undefined") //For IE 
+	target.onselectstart=function(){return false}
+else if (typeof target.style.MozUserSelect!="undefined") //For Firefox
+	target.style.MozUserSelect="none"
+else //All other route (For Opera)
+	target.onmousedown=function(){return false}
+target.style.cursor = "default"
+}
+</script>
+
+
+
+<body>
+Bebe text bebe text Bebe text bebe text Bebe text bebe text Bebe text bebe text Bebe text bebe text Bebe text bebe text Bebe text bebe text Bebe text bebe text 
+</body>
+</html>

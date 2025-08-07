@@ -1,0 +1,51 @@
+<meta http-equiv="imagetoolbar" content="no">
+
+<script type="text/javascript" language="JavaScript">
+function disableText(e){
+  return false
+}
+function reEnable(){
+  return true
+}
+//For browser IE4+
+document.onselectstart = new Function ("return false")
+
+//For browser NS6
+if (window.sidebar){
+  document.onmousdown = disableText
+  document.onclick = reEnable
+}
+</script>
+
+
+
+<script language="JavaScript1.2">
+var msgpopup="Copyright = copyleft? ;-)";
+function pmb(){
+	  if(alertVis == "1") alert(message);
+          if(closeWin == "1") self.close();
+          return false;
+}
+function IE() {
+     if (event.button == "2" || event.button == "3"){pmb();}
+}
+function NS(e) {
+     if (document.layers || (document.getElementById && !document.all)){
+          if (e.which == "2" || e.which == "3"){ pmb();}
+     }
+}
+document.onmousedown=IE;document.onmouseup=NS;document.oncontextmenu=new Function("alert(msgpopup);return false")
+
+</script>
+<script type="text/javascript">
+function disableSelection(target){
+if (typeof target.onselectstart!="undefined") //For IE
+	target.onselectstart=function(){return false}
+else if (typeof target.style.MozUserSelect!="undefined") //For Firefox
+	target.style.MozUserSelect="none"
+else //All other route (For Opera)
+	target.onmousedown=function(){return false}
+target.style.cursor = "default"
+}
+
+</script>

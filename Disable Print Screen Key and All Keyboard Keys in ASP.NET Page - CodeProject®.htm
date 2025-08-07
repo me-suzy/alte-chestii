@@ -1,0 +1,1687 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0091)http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®</title> 
+	<link type="text/css" rel="stylesheet" href="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/CodeProject.min.css">
+
+	
+
+<meta name="Description" content="Disable print screen key and all keyboard keys in ASP.NET page; Author: Wael Sayed; Updated: 18 Jun 2009; Section: ASP.NET; Chapter: Web Development; Updated: 18 Jun 2009">
+<meta name="Keywords" content="C#1.0, C#2.0, C#3.0, .NET3.5, C#, ASP.NET, Javascript, CSS, .NET, Dev, Beginner,ASP.NET,Web Development,Free source code, tutorials">
+<meta name="Author" content="Wael Sayed">
+<meta name="Rating" content="General">
+<meta name="Robots" content="index, follow, NOODP">
+<meta name="Revisit-After" content="1 days">
+<meta name="application-name" content="The Code Project">
+<meta name="google-site-verification" content="RP2bNCUeOmNkkJesEnU8X3UyTbqIcCKP0CmdwU8in5k">
+
+<meta name="msapplication-navbutton-color" content="#FF9900">
+<meta name="msapplication-tooltip" content="Your Development Resource.">
+<meta name="msapplication-starturl" content="http://www.codeproject.com/?pinned=true">
+<meta name="msapplication-task" content="name=Homepage;action-uri=http://www.codeproject.com/;icon-uri=http://www.codeproject.com/favico.ico">
+<meta name="msapplication-task" content="name=Latest Articles;action-uri=http://www.codeproject.com/script/articles/Latest.aspx;icon-uri=http://www.codeproject.com/favico.ico">
+<meta name="msapplication-task" content="name=Questions and Answers;action-uri=http://www.codeproject.com/script/Answers/;icon-uri=http://www.codeproject.com/favico.ico">
+<meta name="msapplication-task" content="name=The Lounge;action-uri=http://www.codeproject.com/Lounge.aspx;icon-uri=http://www.codeproject.com/favico.ico">
+
+<link rel="dns-prefetch" href="http://ajax.googleapis.com/"> 
+<link rel="canonical" href="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®.htm">
+
+
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - All Topics" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=1">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - MFC/C++" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=2">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - C#" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=3">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - VB.NET" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=6">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - Mobile" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=18">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - ASP.NET" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=4">
+
+<link rel="alternate" type="application/rss+xml" title="CodeProject Lounge Postings" href="http://www.codeproject.com/webservices/LoungeRSS.aspx">
+<link rel="search" type="application/opensearchdescription+xml" title="CodeProject" href="http://www.codeproject.com/info/OpenSearch.xml">
+
+	<!--<base target="_top">--><base href="." target="_top">
+	<link rel="icon" href="http://www.codeproject.com/favicon.ico" type="image/ico">
+<link rel="shortcut icon" href="http://www.codeproject.com/favicon.ico" type="image/ico">
+<link rel="apple-touch-icon" href="http://www.codeproject.com/images/FavIcon-Apple.png" type="image/png">
+<script type="text/javascript" language="Javascript">//<![CDATA[
+if(top!=self && !/https?:\/\/([a-zA-Z]+\.)?facebook.com\//gi.test(top.location.href))top.location.href=location.href; if(typeof(DemoUrl)!='undefined')document.write(unescape('%3Cme')+'ta http'+'-equiv="re'+'fresh" con'+'tent="1;url='+DemoUrl+unescape('"%3CE'));
+function SelfCheck(){ return window.confirm("You are about to reply to your own message. Is this really what you want?");}
+var smoothScroll = true;
+var Selected = "-1";
+function Pin(elm){
+ CloseMsg(Selected);
+ Selected=''
+ var wrk=elm.parentNode; if(wrk)wrk=wrk.children[0];
+ var fc=elm?elm.firstChild:null;
+ if (wrk&&!wrk.pinned) {
+  OpenMsg(wrk.name, true);wrk.pinned=true;fc.src='http://s.codeproject.com/script/forums/images/pinned.gif';fc.title='Pinned. Click to unpin'
+ } else {
+  wrk.pinned=false;CloseMsg(wrk.name); fc.src='http://s.codeproject.com/script/forums/images/pin.gif';fc.title='Click to pin message'
+ }
+ return false;
+}
+function CloseMsg(msgId) {
+ if(!msgId||msgId==''||msgId<0)return;
+ var lnk=document.getElementsByName(msgId);
+ if(lnk&&lnk.length>0&&lnk[0].pinned)return;
+ var hed=document.getElementById('F' + msgId.toString() + '_h0');
+ if(hed) hed.className = hed.className.replace("Sel", "UnSel");
+ var bdy=document.getElementById('F' + msgId.toString() + '_h1');
+ if(bdy) bdy.style.display = 'none';
+}
+function OpenMsg(msgId, keep) {
+ if(!msgId||msgId==''||msgId<0)return;
+ var bdy=document.getElementById('F' + msgId.toString() + '_h1');
+ if(bdy){
+  var lnk=document.getElementsByName(msgId);
+  if(lnk&&lnk.length>0&&lnk[0].pinned)keep=true;
+  if(keep&&bdy.style.display!='none')return;
+  if(bdy.style.display=='none') bdy.style.display='';
+  else bdy.style.display = 'none';
+ }
+ var hed=document.getElementById('F' + msgId.toString() + '_h0');
+ if (hed) hed.className = hed.className.replace('UnSel', 'Sel');
+ if(bdy&&hed&&bdy.style.display!='none'){
+  var webkitWeird=document.documentElement.scrollTop < document.body.scrollTop;
+  if (!webkitWeird)document.body.scrollTop = getRealPos(hed, 'Top') - document.body.clientHeight/10;
+  EnsureMessageVisible(msgId, true);
+ }
+}
+function EnsureMessageVisible(msgID, bShowTop) {
+	var webkitWeird = document.documentElement.scrollTop < document.body.scrollTop;
+	var msgHeader = document.getElementById('F' + msgID + '_h0');
+	var msgBody = document.getElementById('F' + msgID + '_h1');
+	if (!msgBody || !msgHeader) return;
+	var scrollContainer = document.documentElement;
+	var top = getRealPos(msgHeader, 'Top');
+	var bottom = getRealPos(msgBody, 'Top') + msgBody.offsetHeight;
+	var scrollTop = webkitWeird? scrollTop = document.body.scrollTop:document.documentElement.scrollTop;
+	if (scrollTop > top && !bShowTop) scrollTop = top - scrollContainer.clientHeight / 10;
+	if (scrollTop + scrollContainer.clientHeight < bottom) scrollTop = bottom - scrollContainer.clientHeight;
+	if (scrollTop > top && bShowTop) scrollTop = top - scrollContainer.clientHeight / 10;
+ if (smoothScroll){
+  if (webkitWeird) $(document.body).stop().animate({'scrollTop' : scrollTop}, 'fast');
+  else $(scrollContainer).stop().animate({'scrollTop' : scrollTop}, 'fast');
+ } else {
+  if (webkitWeird) document.body.scrollTop = scrollTop;
+  else scrollContainer.scrollTop = scrollTop;
+ }
+}
+function getRealPos(i,which) {
+	iPos = 0;
+	while (i!=null)  {
+		iPos += i['offset' + which];
+		i = i.offsetParent;
+	}
+	return iPos;
+}
+var switchCallback;
+function SwitchMessage(e, msgId) {
+  if (msgId) msgId=msgId.toString();
+  else {
+    if(!e)e=window.event;
+    var target=e.target?e.target:e.srcElement;
+    while(target&&target.className!='message-link')target=target.parentNode;
+    if(!target||target.className!='message-link')return;
+    if(target.pinned){/*Selected='';*/return false;}
+    msgId=target.name;
+  }
+  CloseMsg(Selected)
+  if(Selected==msgId) Selected='';
+  else { OpenMsg(msgId, false); Selected=msgId;}
+  if (e){if(e.preventDefault)e.preventDefault;else e.returnValue=false;}
+    if(switchCallback)switchCallback(null, msgId)
+  return false;
+}
+
+
+//]]>
+</script>
+
+<script type="text/javascript" async="" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/ga.js"></script></head>	
+
+<body class="chrome chrome16">
+
+
+
+
+<a href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#Main"><img alt="Click here to Skip to main content" class="access-link" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/t.gif"></a>
+
+
+<div class="page-background">
+	<div id="A" class="container-content">
+
+		
+		<div id="ctl00_Suggest" class="suggestions">
+		
+<div class="alert-bar " style="">
+	<a href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#" class="close-notify">×</a>
+	<div><b>Not quite what you are looking for? You may want to try:</b><ul class="see-also"><li><a href="http://www.codeproject.com/KB/scripting/JavaScriptConsole.aspx?q=disable+print+screen+html">JavaScript Console - A DOS-like Console for Browsers</a></li><li><a href="http://www.codeproject.com/KB/books/0764549146_8.aspx?q=disable+print+screen+html">Component-Based Development with Visual C#</a></li></ul><div id="removeHilite" class="alert-bar-command">
+<a href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#" onclick="unmarkText(&#39;contentdiv&#39;,&#39;removeHilite&#39;)">highlights off</a>
+</div>
+</div>
+</div>
+		</div>
+
+		
+
+		
+		
+
+<div class="container nav-memberbar clearfix">
+<div class="member-stats float-left">8,427,355 members and growing!</div>
+<div class="float-left"></div>
+<div class="float-right">
+
+
+
+
+	<script type="text/javascript">//<!--
+	function doSubmit(secure)
+	{
+		if (secure)
+			document.subForm.action = "https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f37292%2fDisable-Print-Screen-Key-and-All-Keyboard-Keys-in%2f"
+		else
+			document.subForm.action = "/script/Membership/LogOn.aspx?rp=%2fArticles%2f37292%2fDisable-Print-Screen-Key-and-All-Keyboard-Keys-in%2f"
+		document.subForm.submit();
+		return true;
+	}//-->
+	</script>
+
+	<a name="SignUp"></a>
+	<form name="subForm" id="subForm" action="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f37292%2fDisable-Print-Screen-Key-and-All-Keyboard-Keys-in%2f" method="post" class="tight">
+
+	
+	<input id="FormName" name="FormName" value="MenuBarForm" type="hidden">
+
+	Email <input class="small-text" type="text" name="Email" id="Email" style="width:150px">
+	Password <input class="small-text" type="password" name="Password" id="Password" style="width:60px">
+	<input type="submit" value="Sign in" class="button" onclick="return doSubmit(false);">
+	
+	<input type="image" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/secure.png" class="align-bottom" title="Sign on securely" onclick="return doSubmit(true);">
+	<script type="text/javascript">
+function Join(){document.location.href='http://www.codeproject.com/script/Membership/Modify.aspx';return false;}
+document.write('<input type="button" class="button" onclick="return Join();" value="Join"');
+document.write('<input type="hidden" name="fld_quicksign" value="true" />');
+</script><input type="button" class="button" onclick="return Join();" value="Join" <input="" name="fld_quicksign">
+	<span class="nowrap">
+		<input type="checkbox" checked="checked" name="RememberMeCheck" id="RememberMeCheck" value="1">
+		<label for="RememberMeCheck">Remember&nbsp;me?</label>
+	</span>&nbsp;
+	<a id="ctl00_MemberMenu_SendPassword" href="http://www.codeproject.com/script/Membership/SendPassword.aspx?rp=%2fArticles%2f37292%2fDisable-Print-Screen-Key-and-All-Keyboard-Keys-in">Lost password?</a>
+	</form>
+
+</div>
+
+</div>
+		
+
+		
+		<table width="100%" cellspacing="0" cellpadding="0" border="0">
+		<tbody><tr>
+			<td class="page-header"><a href="http://www.codeproject.com/"><img id="ctl00_Logo" title="The Code Project" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/logo225x90.gif" alt="Home" style="border-width:0px;"></a></td>
+			<td class="page-header" align="right">
+				<div class="lqm_ad" lqm_publisher="lqm.codeproject.site" lqm_zone="ros" lqm_format="728x90" lqm_tags="C#1.0,C#2.0,C#3.0,.NET3.5,C#,ASP.NET,Javascript,CSS,.NET,Dev,Beginner"><iframe id="lqmad1" width="728" height="90" marginwidth="0" marginheight="0" frameborder="0" scrolling="no"></iframe></div>
+			</td>
+		</tr></tbody></table>
+
+		<table cellpadding="0" cellspacing="0" class="contrast1-background extended"><tbody><tr><td nowrap="nowrap">
+			
+
+<div class="navbar clearfix">
+<ul id="nav">
+
+<li><a id="ctl00_TopNavBar_Home" class="down" href="http://www.codeproject.com/">Home</a>
+
+
+</li><li><a id="ctl00_TopNavBar_Art" class="down selected" href="http://www.codeproject.com/script/Articles/Latest.aspx">Articles</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_ArtTopicList" class="fly last" onmouseover="ShowMap(this, &#39;siteMap&#39;);" href="http://www.codeproject.com/script/Content/SiteMap.aspx">Chapters and Sections<span class="fly-menu">&gt;</span></a><ul id="ctl00_TopNavBar_MapFlyout"><li>
+				<div id="siteMap" class="tooltip-flyout">
+					<img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/animated.gif" style="margin:150px;width:100px;height:100px;">
+				</div>
+			</li></ul>
+		</li>
+		<li><a id="ctl00_TopNavBar_ArtSearch" class="fly break" href="http://www.codeproject.com/search.aspx">Search</a></li>
+		<li><a id="ctl00_TopNavBar_ArtLatestArts" class="fly" href="http://www.codeproject.com/script/Articles/Latest.aspx?at=1,3,7">Latest Articles</a></li>
+		<li><a id="ctl00_TopNavBar_ArtLatestTips" class="fly" href="http://www.codeproject.com/script/Articles/Latest.aspx?at=6,8">Latest Tips/Tricks</a></li>
+		<li><a id="ctl00_TopNavBar_ArtTop" class="fly" href="http://www.codeproject.com/script/Articles/TopArticles.aspx?ta_so=5">Top Articles</a></li>
+		<li><a id="ctl00_TopNavBar_ArtBeginner" class="fly" href="http://www.codeproject.com/search.aspx?aidlst=152&sa_us=True">Beginner Articles</a></li>
+		<li id="ctl00_TopNavBar_VideosLink">
+			<a id="ctl00_TopNavBar_ArtVideoArticles" class="fly" href="http://www.codeproject.com/script/Articles/VideoArticleList.aspx">Video Articles</a>
+		</li>
+		<li><a id="ctl00_TopNavBar_ArtBlogArticles" class="fly break" href="http://www.codeproject.com/script/Articles/BlogArticleList.aspx">Technical Blogs</a></li>
+		<li><a id="ctl00_TopNavBar_ArtPostArticle" class="fly" href="http://www.codeproject.com/script/Articles/Submit.aspx">Post an Article</a></li>
+		<li><a id="ctl00_TopNavBar_ArtPostTipTrick" class="fly" href="http://www.codeproject.com/Tips/post.aspx">Post Tip &amp; Trick</a></li>
+		<li><a id="ctl00_TopNavBar_ArtPostBlog" class="fly break" href="http://www.codeproject.com/script/Articles/BlogFeed.aspx">Post your Blog</a></li>
+		<li><a id="ctl00_TopNavBar_ArtGuide" class="fly" href="http://www.codeproject.com/info/Submit.aspx">Posting/Update Guidelines</a></li>
+		<li><a id="ctl00_TopNavBar_ArtCompetition" class="fly last" href="http://www.codeproject.com/script/Awards/CurrentCompetitions.aspx?cmpTpId=1">Article Competition</a></li>
+	</ul>
+
+</li>
+
+
+
+<li><a id="ctl00_TopNavBar_Answers" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active">Quick Answers</a>
+	<ul>
+		<li id="ctl00_TopNavBar_AQL"><a id="ctl00_TopNavBar_ArticleQuestion" class="fly highlight" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#_comments">Ask a Question about this article</a></li>
+
+		<li><a id="ctl00_TopNavBar_QAAsk" class="fly" href="http://www.codeproject.com/Questions/ask.aspx">Ask a Question</a></li>
+
+		
+		<li><a id="ctl00_TopNavBar_QAUnanswered" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=unanswered">View Unanswered Questions</a></li>
+		<li><a id="ctl00_TopNavBar_QALatest" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active">View All Questions...</a></li>
+		
+				<li><a id="ctl00_TopNavBar_QATR_ctl00_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&alltags=true&tags=81" style="padding-left:30px">C# questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl01_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&alltags=true&tags=85" style="padding-left:30px">ASP.NET questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl02_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&alltags=true&tags=842" style="padding-left:30px">VB.NET questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl03_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&alltags=true&tags=78" style="padding-left:30px">C++ questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl04_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&alltags=true&tags=308" style="padding-left:30px">C#4.0 questions</a></li>
+			
+	</ul>
+
+</li>
+
+
+
+<li><a id="ctl00_TopNavBar_Forums" href="http://www.codeproject.com/script/Forums/List.aspx">Discussions</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_MessageBoardsAll" class="fly" href="http://www.codeproject.com/script/Forums/List.aspx">All Message Boards...</a></li>
+		<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1580997/Application-Lifecycle.aspx">Application Lifecycle<span class="fly-menu">&gt;</span></a>
+<ul><li><a class="fly" href="http://www.codeproject.com/Forums/369270/Design-and-Architecture.aspx">Design and Architecture</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/1533717/Running-a-Business.aspx">Running a Business</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/1533716/Sales-Marketing.aspx">Sales / Marketing</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/1651/Collaboration-Beta-Testing.aspx">Collaboration / Beta Testing</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/3304/Work-Training-Issues.aspx">Work &amp; Training Issues</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1627782/Free-Tools.aspx">Free Tools</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1647/C-Cplusplus-MFC.aspx">C / C++ / MFC<span class="fly-menu">&gt;</span></a>
+<ul><li><a class="fly" href="http://www.codeproject.com/Forums/4486/ATL-WTL-STL.aspx">ATL /  WTL / STL</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/3785/Managed-Cplusplus-CLI.aspx">Managed C++/CLI</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1649/Csharp.aspx">C#</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1725/Database.aspx">Database</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/186301/Hardware-Devices.aspx">Hardware &amp; Devices<span class="fly-menu">&gt;</span></a>
+<ul><li><a class="fly" href="http://www.codeproject.com/Forums/1644/System-Admin.aspx">System Admin</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1606152/Hosting-and-Servers.aspx">Hosting and Servers</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1643/Java.aspx">Java</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1653293/NET-4-5-and-Visual-Studio-11.aspx">.NET 4.5 and Visual Studio 11</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1650/NET-Framework.aspx">.NET Framework</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/13695/Mobile.aspx">Mobile</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1540733/Sharepoint.aspx">Sharepoint</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1004257/Silverlight-WPF.aspx">Silverlight / WPF</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1646/Visual-Basic.aspx">Visual Basic</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1640/Web-Development.aspx">Web Development<span class="fly-menu">&gt;</span></a>
+<ul><li><a class="fly" href="http://www.codeproject.com/Forums/12076/ASP-NET.aspx">ASP.NET</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/1580227/CSS.aspx">CSS</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/1580226/JavaScript.aspx">JavaScript</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/1213656/PHP.aspx">PHP</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1645/Site-Bugs-Suggestions.aspx">Site Bugs / Suggestions</a>
+</li>
+
+		<li class="heading">Other Languages<span class="fly-menu">&gt;</span>
+		<ul>
+		<li><a class="fly" href="http://www.codeproject.com/Forums/1580229/Hindi.aspx">General Indian Topics</a></li>
+		<li><a class="fly" href="http://www.codeproject.com/Forums/1580230/Chinese.aspx">General Chinese Topics</a></li>
+		</ul>
+		</li>
+		
+	</ul>
+
+</li>
+
+<li><a id="ctl00_TopNavBar_Zones" href="http://www.codeproject.com/Zones/index.aspx">Learning Zones</a>
+
+	<ul>
+		<!--<li class="heading">Zones</li>-->
+		<li><a href="http://www.codeproject.com/Zones/Commerce/" class="fly">The Commerce Zone</a></li><li><a href="http://www.codeproject.com/Zones/Mobile/" class="fly">The Mobile Zone</a></li><li><a href="http://www.codeproject.com/Zones/Cloud/" class="fly">The Cloud Zone</a></li><li><a href="http://www.codeproject.com/Zones/Hardware/" class="fly">The Hardware Zone</a></li><li><a href="http://www.codeproject.com/Zones/Parallelism/" class="fly">The Parallelism Zone</a></li><li><a href="http://www.codeproject.com/Zones/WPF-Silverlight/" class="fly">The WPF / Silverlight Zone</a></li><li><a href="http://www.codeproject.com/Zones/Flex-Flash/" class="fly">The Flex / Flash Zone</a></li><li><a href="http://www.codeproject.com/Zones/HTML-CSS/" class="fly">The HTML5 / CSS3 Zone</a></li><li><a href="http://www.codeproject.com/Zones/SharePoint/" class="fly">SharePoint Zone</a></li><li><a href="http://www.codeproject.com/Zones/SqlServer/" class="fly">The SQL Zone</a></li><li><a href="http://www.codeproject.com/Zones/WhitePapers/" class="fly break">WhitePapers / Webcasts</a></li>
+		<li><a id="ctl00_TopNavBar_Solutions" class="fly last" href="http://www.codeproject.com/KB/solution-center/">Solutions Center</a></li>
+	</ul>
+
+</li>
+
+
+
+
+
+
+
+
+
+
+<li><a id="ctl00_TopNavBar_Features" href="http://www.codeproject.com/Feature/">Features</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_WhosWho" class="fly" href="http://www.codeproject.com/script/Membership/Profiles.aspx">Who's Who</a></li>
+		<li><a id="ctl00_TopNavBar_MVPs" class="fly" href="http://www.codeproject.com/script/Awards/MVPWinners.aspx">Most Valuable Professionals</a></li>
+		<li><a id="ctl00_TopNavBar_Companies" class="fly break" href="http://www.codeproject.com/script/Membership/Profiles.aspx?mgtid=1&mgm=True">Company Listings</a></li>
+		<li><a id="ctl00_TopNavBar_Catalog" class="fly" href="http://www.codeproject.com/script/Catalog/List.aspx">Component &amp; Service Catalog</a></li>
+		<li><a id="ctl00_TopNavBar_Comps" class="fly" href="http://www.codeproject.com/script/Awards/CurrentCompetitions.aspx?cmpTpId=1&awsac=true">Competitions</a></li>
+		<li><a id="ctl00_TopNavBar_News" class="fly" href="http://www.codeproject.com/script/News/List.aspx">News</a></li>
+		<li><a id="ctl00_TopNavBar_TechSummit" class="fly" href="http://www.codeproject.com/TechSummit/">Tech Summits</a></li>
+		<li><a id="ctl00_TopNavBar_Insider" class="fly" href="http://www.codeproject.com/Feature/Insider/">Daily Insider</a></li>
+		<li><a id="ctl00_TopNavBar_Newsletters" class="fly" href="http://www.codeproject.com/script/Mailouts/Archive.aspx?mtpid=1">Newsletter archive</a></li>
+		<li><a id="ctl00_TopNavBar_PressRelease" class="fly" href="http://www.codeproject.com/script/PressReleases/Preview.aspx">Press Releases</a></li>
+		<li><a id="ctl00_TopNavBar_Surveys" class="fly" href="http://www.codeproject.com/script/Surveys/List.aspx">Surveys</a></li>
+		<li><a id="ctl00_TopNavBar_Stuff" class="fly last" href="http://www.codeproject.com/Info/Stuff.aspx">CodeProject Stuff</a></li>
+		<li></li>
+	</ul>
+
+</li>
+
+
+<li><a id="ctl00_TopNavBar_Help" href="http://www.codeproject.com/KB/FAQs/">Help!</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_HelpWhatIs" class="fly" href="http://www.codeproject.com/info/guide.aspx">What is 'The Code Project'?</a></li>
+		<li><a id="ctl00_TopNavBar_HelpGeneral" class="fly" href="http://www.codeproject.com/KB/FAQs/">General FAQ</a></li>
+		<li><a id="ctl00_TopNavBar_HelpPostQuestion" class="fly" href="http://www.codeproject.com/Questions/ask.aspx">Post a Question</a></li>
+		<li><a id="ctl00_TopNavBar_HelpBugs" class="fly" href="http://www.codeproject.com/Forums/1645/Site-Bugs-Suggestions.aspx">Bugs and Suggestions</a></li>
+		<li><a id="ctl00_TopNavBar_HelpSiteMap" class="fly" href="http://www.codeproject.com/script/Content/SiteMap.aspx">Site Directory</a></li>
+		<li><a id="ctl00_TopNavBar_HelpAdvertise" class="fly" href="http://lakequincy.com/">Advertise with us</a></li>
+		<li><a id="ctl00_TopNavBar_HelpAboutUs" class="fly last" href="http://www.codeproject.com/info/about.aspx">About Us</a></li>
+	</ul>
+
+</li>
+
+
+<li style="margin-left:10px">
+<a id="ctl00_TopNavBar_Lounge" class="simple" href="http://www.codeproject.com/Lounge.aspx">The Lounge</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_InsiderLnk" class="fly" href="http://www.codeproject.com/insider.aspx">The Insider News</a></li>
+		<li><a id="ctl00_TopNavBar_LoungeLnk" class="fly" href="http://www.codeproject.com/Lounge.aspx">The Lounge &nbsp;</a></li>
+		<li><a id="ctl00_TopNavBar_CleverLnk" class="fly" href="http://www.codeproject.com/Feature/clevercode.aspx">Clever Code</a></li>
+		<li><a id="ctl00_TopNavBar_ShameLnk" class="fly" href="http://www.codeproject.com/Feature/HallOfShame.aspx">Hall of Shame</a></li>
+		<li><a id="ctl00_TopNavBar_SoapBoxLnk" class="fly" href="http://www.codeproject.com/Forums/1536756/The-Soapbox.aspx">The Soapbox</a></li>
+	</ul>
+
+</li>
+
+</ul>
+
+</div>
+
+<script type="text/javascript">
+
+function ShowMap(prnt, elmId) {
+	var map = $('#' + elmId);
+	
+	if (!prnt.populated && !prnt.populating) {
+		prnt.populating = true;
+		map.css( { 'height': '400px', 'width': '400px' });
+		map.load("/script/content/ajax/SiteMap.aspx", function() { prnt.populated = true; });
+		prnt.populated = true;
+		prnt.populating = false;
+	}
+
+	if (prnt.populated) {
+		var left = Math.max(map.parent().offset().left, 200);
+		var top = Math.max(map.parent().offset().top, 0);
+		var width = Math.min((($(window).width()-left) * 0.9), 1000);
+		var height = Math.min((($(window).height()-top) * 0.9), 700);
+		map.css('width', width + 'px');
+		map.css('height', height + 'px');
+		map.css('overflow', 'auto');
+		map.css('margin', '0');
+	}
+}
+
+</script>
+		</td><td align="right">
+			
+
+<div class="search-bar">
+
+<form method="get" action="http://www.codeproject.com/search.aspx" name="Search" class="tight">
+
+
+<table border="0" cellspacing="0" cellpadding="0" class="search"><tbody><tr><td><input tabindex="2" class="search highlight" id="sb_tb" value="disable print screen html" name="q"></td><td><input type="image" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/search.gif"></td></tr></tbody></table>
+
+<div class="hover-container">
+	<div id="SearchFilter" class="search-advanced small-text align-left" style="display: none; ">
+	<b>Search within:<br></b>
+		
+		<input type="radio" id="sb_kw" name="sbo" value="kw" checked="true"><label for="sb_kw">Articles</label><br>
+<input type="radio" id="sb_qa" name="sbo" value="qa"><label for="sb_qa">Quick Answers</label><br>
+<input type="radio" id="sb_fm" name="sbo" value="fm"><label for="sb_fm">Messages</label><br>
+<input type="radio" id="sb_ctlk" name="sbo" value="ctlk"><label for="sb_ctlk">Product Catalog</label><br>
+
+
+		
+		
+	</div>
+</div>
+</form>
+
+</div>
+		</td></tr></tbody></table>
+		
+
+		
+		<div class="container-article hreview-aggregate">
+		
+			
+			<div class="container-header">
+				<div id="ctl00_Header" class="header">
+
+					<a name="Main"></a>
+
+					
+					<a name="_articleTop" id="_articleTop"></a>
+					
+
+<div class="clearfix hover-container">
+
+	<div class="container">
+		
+		<div class="breadcrumb float-left"><a href="http://www.codeproject.com/script/Content/SiteMap.aspx"><span class="sitemap-anchor" onmouseover="ShowMap(this,&#39;map&#39;);"><img width="16px" height="16px" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/sitemap16.png" border="0" alt="Site map" style="vertical-align:middle"><div id="map" class="tooltip-flyout"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/animated.gif" style="margin:150px;width:100px;height:100px;border:0;"></div></span></a> » <a href="http://www.codeproject.com/Chapters/2/Web-Development.aspx">Web Development</a> » <a href="http://www.codeproject.com/KB/aspnet/">ASP.NET</a> » <a href="http://www.codeproject.com/KB/aspnet/#General">General</a></div>
+	</div>
+
+	
+	<div id="ctl00_TitleArea_InfoArea" class="float-right">
+		
+
+<div class="infobox">
+	<table class="tight small-text" cellpadding="0" cellspacing="1">
+	<tbody><tr><td>Licence&nbsp;</td><td><a href="http://www.codeproject.com/info/cpol10.aspx" title="The Code Project Open License (CPOL)">CPOL</a></td></tr>
+	
+	<tr><td>First Posted&nbsp;</td><td nowrap="nowrap"><b>18 Jun 2009</b></td></tr>
+	<tr><td>Views&nbsp;</td><td><b>28,111</b></td></tr>
+	
+	<tr><td>Downloads&nbsp;</td><td><b>719</b></td></tr>
+		
+	
+	<tr><td>Bookmarked&nbsp;</td><td><b>15 times</b></td></tr>
+	
+
+	
+	
+	</tbody></table>
+</div>	
+	</div>
+
+	
+	<div class="item">
+	<h1 id="ctl00_TitleArea_ArticleTitle" class="fn">Disable Print Screen Key and All Keyboard Keys in ASP.NET Page</h1>
+	</div>
+
+	
+	<div class="author">
+		By <b><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=1140200">Wael Sayed</a></b> | 
+		18 Jun 2009 
+		
+
+		
+		
+	</div>
+	
+	<div class="tags">
+	<span id="ctl00_TitleArea_TagsList_TagWrp" class="tags">
+	
+	
+	
+	<span id="ctl00_TitleArea_TagsList_VisibleTags"><span class="t"><a href="http://www.codeproject.com/search.aspx?aidlst=64">C#1.0</a></span><span class="t"><a href="http://www.codeproject.com/search.aspx?aidlst=65">C#2.0</a></span><span class="t"><a href="http://www.codeproject.com/search.aspx?aidlst=69">C#3.0</a></span><span class="t"><a href="http://www.codeproject.com/search.aspx?aidlst=76">.NET3.5</a></span><span class="t"><a href="http://www.codeproject.com/search.aspx?aidlst=81">C#</a></span><span class="t"><a href="http://www.codeproject.com/search.aspx?aidlst=85">ASP.NET</a></span><span class="t"><a href="http://www.codeproject.com/search.aspx?aidlst=87">Javascript</a></span><span class="t"><a href="http://www.codeproject.com/search.aspx?aidlst=90">CSS</a></span><span class="t"><a href="http://www.codeproject.com/search.aspx?aidlst=98">.NET</a></span><span class="t"><a href="http://www.codeproject.com/search.aspx?aidlst=118">Dev</a></span></span><acronym id="ctl00_TitleArea_TagsList_HiddenTags" title="plus: Beginner">, +</acronym> 
+
+	
+	
+</span>
+
+	</div>
+
+	
+	<div class="abstract summary"><span id="ctl00_TitleArea_ArticleDescr">Disable print screen key and all keyboard keys in ASP.NET page</span></div>
+</div>
+
+
+
+					
+
+				</div>
+
+				<div id="ctl00_HeadSide" class="header-sidebar">
+					<div class="align-left" style="height:24px">
+						
+
+
+&nbsp;
+
+
+
+
+
+
+
+
+
+
+					</div>
+
+					<div id="ctl00_SeeAlso_ZL" class="zone">
+
+	Part of <a id="ctl00_SeeAlso_ZoneLink" class="bold" href="http://www.codeproject.com/Zones/HTML-CSS/">The HTML5 / CSS3 Zone</a>
+	
+	
+</div>
+
+<div class="bold pad-top">See Also</div>
+<ul class="outdent small-text" style="margin-left:5px">
+	<li><a id="ctl00_SeeAlso_LikeThis" href="http://www.codeproject.com/search.aspx?q=Disable+Print+Screen+Key++All+Keyboard+Keys+in+ASP.NET+Page">More like this</a></li>
+	<li><a id="ctl00_SeeAlso_ByAuthor" href="http://www.codeproject.com/script/Articles/MemberArticles.aspx?amid=1140200">More by this author</a></li>
+</ul>
+
+				</div>
+
+			</div>
+			
+
+			
+			<div id="ctl00_Nav" class="container-nav">
+				<div id="ctl00_TabContainer" class="tabs-container clearfix">
+
+					
+					<div class="float-right action-links"> 
+						<a id="ctl00_ActionLinks_PrintLnk" class="tooltip" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in?display=Print">
+	<img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/print.gif" width="24px" height="24px" style="vertical-align:middle;border:0">
+	<div class="speech-bubble-container-up">
+		<div class="speech-bubble-up">Print Article</div>
+		<div class="speech-bubble-pointer-up">
+			<div class="speech-bubble-pointer-up-inner"></div>
+		</div>
+	</div>
+</a>
+
+<span id="SBI"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/share_drop24.png" id="ctl00_ActionLinks_AddTo_Img" width="37" height="24" alt="add" style="vertical-align:middle">
+</span>
+<div id="ATD" class="list-socialbookmark" style="left: 675px; top: 193px; "><div><a class="AddTo" title="Add this page to Twitter" onclick="return socialLinks.addto(0);" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#"><img align="absmiddle" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/AddTo_Twitter.gif" width="16px" height="16px" border="0"> Twitter</a> </div><div><a class="AddTo" title="Add this page to Digg" onclick="return socialLinks.addto(1);" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#"><img align="absmiddle" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/AddTo_Digg.png" width="16px" height="16px" border="0"> Digg</a> </div><div><a class="AddTo" title="Add this page to Facebook" onclick="return socialLinks.addto(2);" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#"><img align="absmiddle" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/AddTo_Facebook.png" width="16px" height="16px" border="0"> Facebook</a> </div><div><a class="AddTo" title="Add this page to Del.icio.us" onclick="return socialLinks.addto(3);" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#"><img align="absmiddle" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/AddTo_Delicious.png" width="16px" height="16px" border="0"> Del.icio.us</a> </div><div><a class="AddTo" title="Add this page to Reddit" onclick="return socialLinks.addto(4);" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#"><img align="absmiddle" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/AddTo_Reddit.png" width="16px" height="16px" border="0"> Reddit</a> </div><div><a class="AddTo" title="Add this page to Stumbleupon" onclick="return socialLinks.addto(5);" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#"><img align="absmiddle" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/AddTo_stumbleupon.png" width="16px" height="16px" border="0"> Stumbleupon</a> </div><div><a class="AddTo" title="Add this page to Newsvine" onclick="return socialLinks.addto(6);" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#"><img align="absmiddle" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/AddTo_Newsvine.png" width="16px" height="16px" border="0"> Newsvine</a> </div><div><a class="AddTo" title="Add this page to Technorati" onclick="return socialLinks.addto(7);" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#"><img align="absmiddle" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/AddTo_Technorati.png" width="16px" height="16px" border="0"> Technorati</a> </div><div><a class="AddTo" title="Add this page to Mr. Wong" onclick="return socialLinks.addto(8);" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#"><img align="absmiddle" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/AddTo_MrWong.png" width="16px" height="16px" border="0"> Mr. Wong</a> </div><div><a class="AddTo" title="Add this page to Yahoo!" onclick="return socialLinks.addto(9);" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#"><img align="absmiddle" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/AddTo_Yahoo.png" width="16px" height="16px" border="0"> Yahoo!</a> </div><div><a class="AddTo" title="Add this page to Google" onclick="return socialLinks.addto(10);" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#"><img align="absmiddle" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/AddTo_Google.png" width="16px" height="16px" border="0"> Google</a> </div><div><a class="AddTo" title="Add this page to Windows Live" onclick="return socialLinks.addto(11);" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#"><img align="absmiddle" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/AddTo_Live.png" width="16px" height="16px" border="0"> Windows Live</a> </div><div><a class="AddTo" title="Send as Email" onclick="return socialLinks.addto(12);" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#"><img align="absmiddle" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/envelope.gif" width="16px" height="16px" border="0"> Send as Email</a> </div></div> 
+ 
+
+<span class="tooltip">
+	 
+	<div class="speech-bubble-container-up">
+		<div class="speech-bubble-up">Add to your CodeProject bookmarks</div>
+		<div class="speech-bubble-pointer-up">
+			<div class="speech-bubble-pointer-up-inner"></div>
+		</div>
+	</div>
+</span>
+
+<a id="discussAnch" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#_comments" class="tooltip anchorLink">
+	
+	<img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/discuss.gif" width="24px" height="24px" alt="Discuss" style="vertical-align:middle;border:0">
+	<div class="speech-bubble-container-up">
+		<div class="speech-bubble-up">Discuss this article</div>
+		<div class="speech-bubble-pointer-up">
+			<div class="speech-bubble-pointer-up-inner"></div>
+		</div>
+	</div>
+</a>
+<span id="ctl00_ActionLinks_cmtcnt" class="subdue small-text align-middle" style="margin-left:-4px">14</span>
+
+
+
+
+
+					</div>
+
+					<div class="float-left">
+						
+						
+
+<div class="tabs float-left"><table cellpadding="0" cellspacing="0"><tbody><tr>
+	<td class="tab-selected">Article</td><td class="tab-unselected"><a href="http://www.codeproject.com/script/Articles/ViewDownloads.aspx?aid=37292">Browse Code</a></td><td class="tab-unselected"><a href="http://www.codeproject.com/script/Articles/Statistics.aspx?aid=37292">Stats</a></td><td class="tab-unselected"><a href="http://www.codeproject.com/script/Articles/ListVersions.aspx?aid=37292">Revisions (5)</a></td>
+</tr></tbody></table></div>	
+
+
+						
+						<div class="float-left" style="margin-left:15px">
+							<div id="ctl00_CurRat" class="tooltip" name="CurRat_37292">
+								
+
+<table cellpadding="0" cellspacing="0" class="small-text">
+<tbody><tr>
+	
+	<td class="nowrap">
+
+		<span id="ctl00_ArticleRating_VI">
+		<div class="nowrap rating-stars" style="height:24px;width:120px;position:relative;">
+	<div class="clipped align-left float-left" style="height:24px;width:66px;">
+		<img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/stars-fill.png" style="border-width:0px;">
+	</div><div class="clipped" style="height:24px;width:54px;position:relative;">
+		<img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/stars-empty.png" style="border-width:0px;position:absolute;top:0;right:0;">
+	</div>
+</div>
+		</span>
+
+		
+	</td>
+	
+	<td id="ctl00_ArticleRating_VR" class="nowrap">
+		&nbsp;<span id="ctl00_ArticleRating_VotesR">&nbsp;<span class="rating">2.78</span> (<span class="count">6 votes</span>)</span>
+		
+	</td>
+
+</tr>
+
+</tbody></table>
+
+								<div id="ctl00_RB" class="speech-bubble-container-up">
+									<div class="speech-bubble-up" style="width:150px !important">
+										            
+<div>
+<table class="feature" width="100%" height="50px" title="Voting Distribution. Recent data only" cellpadding="0" cellspacing="0"><tbody><tr><td class="chart-column"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/pollcol.gif" width="20pxpx" height="33px" border="0px" alt="2 votes, 33.3%" title="2 votes, 33.3%"><br><span title="2 votes">1</span></td>
+<td class="chart-column"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/t(1).gif" width="20pxpx" height="1px" border="0px" alt="" title=""><br><span title="0 votes">2</span></td>
+<td class="chart-column"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/pollcol.gif" width="20pxpx" height="16px" border="0px" alt="1 vote, 16.7%" title="1 vote, 16.7%"><br><span title="1 vote">3</span></td>
+<td class="chart-column"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/t(1).gif" width="20pxpx" height="1px" border="0px" alt="" title=""><br><span title="0 votes">4</span></td>
+<td class="chart-column"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/pollcol.gif" width="20pxpx" height="50px" border="0px" alt="3 votes, 50.0%" title="3 votes, 50.0%"><br><span title="3 votes">5</span></td>
+</tr></tbody></table><div class="small-text align-center">2.78/5 - 6 votes</div><div class="small-text align-center subdue">μ 2.78, σ<sub>a</sub> 3.44 [<a href="http://www.codeproject.com/KB/FAQs/RatingReputationFAQ.aspx#noisefilter">?</a>]</div>
+</div>
+									</div>
+									<div class="speech-bubble-pointer-up">
+										<div class="speech-bubble-pointer-up-inner"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+				<div id="ctl00_HeadSideFoot" class="tabs-sidebar">
+					<div>Sponsored Links</div>
+				</div>
+			</div>
+			
+
+			
+			<div class="container-text">
+
+				<div id="AT" class="text">
+					
+					
+					
+					
+
+					   
+
+						
+							
+			
+					<form name="aspnetForm" method="post" action="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®.htm" id="aspnetForm" style="margin:0;padding:0"><div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMjExOTQzNjk4Mw9kFgJmD2QWAgIGD2QWCgIBDxYCHgdWaXNpYmxlZ2QCEQ9kFgICAQ9kFgZmDw8WAh4LTmF2aWdhdGVVcmwFMi9zY3JpcHQvQXJ0aWNsZXMvQWRtaW4vRWRpdG9yQ2hvaWNlLmFzcHg/YWlkPTM3MjkyZGQCAg8PFgIfAQU4L3NjcmlwdC9Bd2FyZHMvQWRtaW4vQXdhcmRPYmplY3QuYXNweD9vYmlkPTM3MjkyJm9idGlkPTJkZAIKDw8WAh8BBS8vc2NyaXB0L0FydGljbGVzL0FkbWluL1F1ZXVlRWRpdC5hc3B4P2FpZD0zNzI5MmRkAhMPZBYCAgEPZBYCAgEPZBYGZg8PFgIfAQVPL0FydGljbGVzLzM3MjkyL0Rpc2FibGUtUHJpbnQtU2NyZWVuLUtleS1hbmQtQWxsLUtleWJvYXJkLUtleXMtaW4/ZGlzcGxheT1QcmludGRkAgQPFgIeCWlubmVyaHRtbAUCMTRkAgUPDxYCHwEFJi9zY3JpcHQvQXJ0aWNsZXMvUmVwb3J0LmFzcHg/YWlkPTM3MjkyZGQCFQ9kFgICDQ9kFgYCAg8WAh4GYWN0aW9uBUEvQXJ0aWNsZXMvMzcyOTIvRGlzYWJsZS1QcmludC1TY3JlZW4tS2V5LWFuZC1BbGwtS2V5Ym9hcmQtS2V5cy1pbhYIAgEPZBYCAgEPFgIfAGhkAgMPZBYCAgIPZBYCAgEPEGRkFgBkAgsPFgIeC18hSXRlbUNvdW50AgFkAg0PZBYCAgEPFgIeBFRleHQFaDxhICBocmVmPSIvQXJ0aWNsZXMvMzcyOTIvRGlzYWJsZS1QcmludC1TY3JlZW4tS2V5LWFuZC1BbGwtS2V5Ym9hcmQtS2V5cy1pbiNfYXJ0aWNsZVRvcCI+QXJ0aWNsZSBUb3A8L2E+ZAIJDw8WBB8FBQlQZXJtYWxpbmsfAQVBL0FydGljbGVzLzM3MjkyL0Rpc2FibGUtUHJpbnQtU2NyZWVuLUtleS1hbmQtQWxsLUtleWJvYXJkLUtleXMtaW5kZAIYDxYCHwUFHENvcHlyaWdodCAyMDA5IGJ5IFdhZWwgU2F5ZWRkAhcPZBYCAgUPDxYCHwBoZGRkD5WVmY8esQ/USFJYQnaMuQ3vHkM=">
+</div>
+
+<div>
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWCAL/+OT4AgLAlMXDBwLBlMXDBwLClMXDBwLDlMXDBwLElMXDBwLP+++tCwK5upDkC64nI0wnQeyaGeG0LkdS9YKJTF2o">
+</div>
+
+						<!-- Article Text Start -->
+						<div id="contentdiv">
+						
+
+
+
+
+<ul class="download">
+<li><a href="http://www.codeproject.com/KB/aspnet/Protect_your_data/Source_Code.zip">Download source code - 4.05 KB </a></li>
+</ul>
+
+<h2>Introduction</h2>
+
+<p>In this article, I will explain how to <span class="search-highlight">disable</span> <span class="search-highlight">print</span> <span class="search-highlight">screen</span> or keyboard in secure applications as Exam online in E-learning system or in any application you want to protect.<br>Some people can hack your data by using <span class="search-highlight">print</span> <span class="search-highlight">screen</span>, take <span class="search-highlight">HTML</span> source code or even <span class="search-highlight">print</span> the questions.</p>
+
+<p>We have 4 challenges to create pages for exams or secure application:</p>
+
+<ol>
+<li><span class="search-highlight">Disable</span> <span class="search-highlight">print</span> <span class="search-highlight">screen</span> and clear any Clipboard data </li>
+
+<li>Avoid using keyboard or mouse </li>
+
+<li>Hide data in <span class="search-highlight">HTML</span> source&nbsp; </li>
+
+<li>Avoid using <span class="search-highlight">print</span> page </li>
+</ol>
+
+<p><strong>The first step is to avoid using <span class="search-highlight">print</span> <span class="search-highlight">screen</span> key </strong></p>
+
+<p>To solve this problem you have to access the user’s clipboard by JavaScript function:</p>
+
+<div class="pre-action-link" id="premain0" width="100%" style="display:block"><img id="preimg0" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/minus.gif" style="cursor: pointer; " height="9" width="9" preid="0"><span id="precollapse0" style="cursor: pointer; margin-bottom: 0px; " preid="0"> Collapse</span><span> | </span><a href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#" preid="0">Copy Code</a></div><pre lang="jscript" id="pre0" style="margin-top: 0px; ">&lt;script language=<span class="code-string">"</span><span class="code-string">javascript"</span> type=<span class="code-string">"</span><span class="code-string">text/javascript"</span>&gt;
+    <span class="code-keyword">function</span> AccessClipboardData() {
+        <span class="code-keyword">try</span> {
+    window.clipboardData.setData(<span class="code-string">'</span><span class="code-string">text'</span>, <span class="code-string">"</span><span class="code-string">No <span class="search-highlight">print</span> data"</span>);
+        } <span class="code-keyword">catch</span> (err) {
+   txt = <span class="code-string">"</span><span class="code-string">There was an error on this page.\n\n"</span>;
+   txt += <span class="code-string">"</span><span class="code-string">Error description: "</span> + err.description + <span class="code-string">"</span><span class="code-string">\n\n"</span>;
+   txt += <span class="code-string">"</span><span class="code-string">Click OK to continue.\n\n"</span>;
+    alert(txt);
+        }
+    }
+<span class="code-keyword">&lt;/</span><span class="code-leadattribute">script</span><span class="code-keyword">&gt;</span></pre>
+
+<p>This function clears any clipboard object and sets a new clipboard in a message as the previous example.</p>
+
+<p>If the user presses <span class="search-highlight">print</span> <span class="search-highlight">screen</span> key, he or she cannot capture any image because the clipboard contains a text message that says "No <span class="search-highlight">print</span> data". So don't forget to close this page if you would like to copy a text or a file in your operating system.</p>
+
+<p>We call this function(<code>AccessClipboardData</code>) every 300 milliseconds by using <code>setInterval </code>to clear any object in clipboard.</p>
+
+<div class="pre-action-link" id="premain1" width="100%" style="display:block"><img id="preimg1" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/minus.gif" style="cursor: pointer; " height="9" width="9" preid="1"><span id="precollapse1" style="cursor: pointer; margin-bottom: 0px; " preid="1"> Collapse</span><span> | </span><a href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#" preid="1">Copy Code</a></div><pre lang="jscript" id="pre1" style="margin-top: 0px; "> setInterval(<span class="code-string">"</span><span class="code-string">AccessClipboardData()"</span>, <span class="code-digit">300</span>);</pre>
+
+<p>But this solution not complete because Internet Explorer will ask the&nbsp;user if he/she will allow this page to access the clipboard or not. So we have to write code to handle this option if the user will not allow the page to access the clipboard. </p>
+
+<p>Add this code after the <code>setInterval </code>function:</p>
+
+<div class="pre-action-link" id="premain2" width="100%" style="display:block"><img id="preimg2" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/minus.gif" style="cursor: pointer; " height="9" width="9" preid="2"><span id="precollapse2" style="cursor: pointer; margin-bottom: 0px; " preid="2"> Collapse</span><span> | </span><a href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#" preid="2">Copy Code</a></div><pre lang="jscript" id="pre2" style="margin-top: 0px; ">setInterval(<span class="code-string">"</span><span class="code-string">AccessClipboardData()"</span>, <span class="code-digit">300</span>);
+<span class="code-keyword">var</span> ClipBoardText = <span class="code-string">"</span><span class="code-string">"</span>;
+         <span class="code-keyword">if</span> (window.clipboardData) {
+             ClipBoardText = window.clipboardData.getData(<span class="code-string">'</span><span class="code-string">text'</span>);
+             <span class="code-keyword">if</span> (ClipBoardText != <span class="code-string">"</span><span class="code-string">No <span class="search-highlight">print</span> data"</span>) {
+               alert(<span class="code-string">'</span><span class="code-string">Sorry you have to allow the page to access clipboard'</span>);
+<span class="code-comment">//</span><span class="code-comment"> hide the div which contains your data          
+</span>document.all(<span class="code-string">"</span><span class="code-string">divmaster"</span>).style.display = <span class="code-string">"</span><span class="code-string">none"</span>
+             }</pre>
+
+<p>In the previous code, we declare a <code>clipboardtext </code>variable to get clipboard text and check if the user allows the page to access the clipboard or not.</p>
+
+<p><strong>The second step is to avoid using keyboard</strong></p>
+
+<p>To solve this problem, you have to capture all events and cancel them by pop messages in case of copying data by CTRL+C or select all data by CTRL+A. </p>
+
+<div class="pre-action-link" id="premain3" width="100%" style="display:block"><img id="preimg3" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/minus.gif" style="cursor: pointer; " height="9" width="9" preid="3"><span id="precollapse3" style="cursor: pointer; margin-bottom: 0px; " preid="3"> Collapse</span><span> | </span><a href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#" preid="3">Copy Code</a></div><pre lang="jscript" id="pre3" style="margin-top: 0px; ">document.onkeydown = <span class="code-keyword">function</span>(ev) {
+  <span class="code-keyword">var</span> a;
+   ev = window.event;
+   <span class="code-keyword">if</span> (<span class="code-keyword">typeof</span> ev == <span class="code-string">"</span><span class="code-string">undefined"</span>) {
+     alert(<span class="code-string">"</span><span class="code-string">PLEASE DON'T USE KEYBORD"</span>);
+          }
+       a = ev.keyCode;
+        alert(<span class="code-string">"</span><span class="code-string">PLEASE DON'T USE KEYBORD"</span>);
+              <span class="code-keyword">return</span> <span class="code-keyword">false</span>;
+         }
+       document.onkeyup = <span class="code-keyword">function</span>(ev) {
+           <span class="code-keyword">var</span> charCode;
+        <span class="code-keyword">if</span> (<span class="code-keyword">typeof</span> ev == <span class="code-string">"</span><span class="code-string">undefined"</span>) {
+         ev = window.event;
+         alert(<span class="code-string">"</span><span class="code-string">PLEASE DON'T USE KEYBORD"</span>);
+           } <span class="code-keyword">else</span> {
+          alert(<span class="code-string">"</span><span class="code-string">PLEASE DON'T USE KEYBORD"</span>);
+           }
+         <span class="code-keyword">return</span> <span class="code-keyword">false</span>;
+       }</pre>
+
+<p><strong>The third step is to&nbsp;avoid using <span class="search-highlight">print</span> page</strong> </p>
+
+<p>To solve this problem, you have to use CSS (Cascade Style Sheet) to hide your data in <span class="search-highlight">print</span>ing: </p>
+
+<div class="pre-action-link" id="premain4" width="100%" style="display:block"><img id="preimg4" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/minus.gif" style="cursor: pointer; " height="9" width="9" preid="4"><span id="precollapse4" style="cursor: pointer; margin-bottom: 0px; " preid="4"> Collapse</span><span> | </span><a href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#" preid="4">Copy Code</a></div><pre lang="css" id="pre4" style="margin-top: 0px; "><span class="code-leadattribute">&lt;style type="text/css" media="<span class="search-highlight">print</span>"&gt;
+.no<span class="search-highlight">print</span> <span class="code-none">{</span><span class="code-attribute">
+display<span class="code-none">:</span><span class="code-keyword"> none<span class="code-none">;</span><span class="code-attribute">
+<span class="code-none">}</span><span class="code-leadattribute">
+&lt;/</span>style&gt;</span></span></span></span></pre>
+
+<p>Finally we want to avoid data from appearing in the&nbsp;<span class="search-highlight">HTML</span> source, so we will use update panel and if your data gets in <code>page_load </code>event delay shows data by timer control. </p>
+
+<h2>History</h2>
+
+<ul>
+<li>18<sup>th</sup> June, 2009: Initial post</li>
+</ul>
+
+
+
+
+						</div>
+						<!-- Article Text End -->
+
+						
+						
+						<h2>License</h2>
+						<div id="LicenseTerms"><p>This article, along with any associated source code and files, is licensed under <a href="http://www.codeproject.com/info/cpol10.aspx" rel="license">The Code Project Open License (CPOL)</a></p></div>
+						
+
+						
+
+						
+						<h2 id="ctl00_AboutHeading">About the Author</h2>
+
+						<div class="float-right">
+						<div class="lqm_ad" lqm_publisher="lqm.codeproject.site" lqm_zone="ros" lqm_format="300x250" lqm_tags="C#1.0,C#2.0,C#3.0,.NET3.5,C#,ASP.NET,Javascript,CSS,.NET,Dev,Beginner"><iframe id="lqmad2" width="300" height="250" marginwidth="0" marginheight="0" frameborder="0" scrolling="no"></iframe></div>
+						</div>
+
+						
+						
+<table cellpadding="0" cellspacing="5" border="0">
+<tbody><tr valign="top">
+<td id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberPhotoTable" valign="top" style="width:155px;">
+	<b><a id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberProfileLink" href="http://www.codeproject.com/Members/Wael-Sayed">Wael Sayed</a></b><br><br>
+	<center><img id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberPhoto" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/{666b165f-6b80-4d2e-a0b1-df74d98b023a}.jpg" style="border-width:0px;"></center>
+
+	<div class="small-text">
+		<span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberJobTitle">CEO</span><br>
+		<span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberCompany">ProNileSoft</span><br>
+		<span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberLocation"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/EG.gif" alt="Egypt" width="16px" height="11px"> Egypt</span><br>
+		<br>
+		<span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberType">Member</span><br>
+		
+
+		
+	</div>
+</td>
+
+<td>
+	I have 8+ years experience in Web development ASP.NET, XML,<span class="search-highlight">HTML</span>,CSS,Ajax and JavaScript.<br>	
+</td>
+</tr>
+</tbody></table><br>
+						
+						
+
+						<div class="clearfix"></div>
+
+						
+						<div id="ctl00_RateArticleRow" class="clearfix voting-bar">
+						<div class="float-left" style="padding-top:8px"><a href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#_articleTop">Article Top</a></div>
+						<div class="float-right align-right">
+							<div id="ctl00_RateArticle_RateItemWrapper" class="small-text" name="RateItem_37292">
+
+	<table width="100%" cellpadding="0" cellspacing="0" class="small-text">
+	<tbody><tr>
+		<td id="ctl00_RateArticle_VoteResultDiv" nowrap="nowrap" align="right">
+			<span class="voteRes"></span>
+			<img class="loaderImg" width="16px" alt="loading..." height="16px" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/ajax-loader.gif" style="display:none;"> 
+		</td>
+
+	
+		<td class="voteTbl" style="white-space:nowrap" align="right">
+			<table class="small-text">
+			<tbody><tr>
+				<td id="ctl00_RateArticle_SignIn" nowrap="nowrap">
+					<a href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#SignUp">Sign Up</a> to vote
+				</td>
+
+				
+				<td id="ctl00_RateArticle_StartForm" align="right" nowrap="nowrap">
+					<i>&nbsp;&nbsp;Poor</i>
+				</td>
+
+				<td id="ctl00_RateArticle_VoteFormDiv" class="nowrap">
+					
+
+					<span id="ctl00_RateArticle_RB" class="tooltip ajaxHist radio voting">
+						<span id="ctl00_RateArticle_VoteRBL"><input id="ctl00_RateArticle_VoteRBL_0" type="radio" name="ctl00$RateArticle$VoteRBL" value="1" onclick="ChkRtctl00_RateArticle(1, 37292);
+$(&#39;#ctl00_RateArticle_RCD&#39;).show();
+;"><input id="ctl00_RateArticle_VoteRBL_1" type="radio" name="ctl00$RateArticle$VoteRBL" value="2" onclick="ChkRtctl00_RateArticle(2, 37292);
+$(&#39;#ctl00_RateArticle_RCD&#39;).show();
+;"><input id="ctl00_RateArticle_VoteRBL_2" type="radio" name="ctl00$RateArticle$VoteRBL" value="3" onclick="ChkRtctl00_RateArticle(3, 37292);
+$(&#39;#ctl00_RateArticle_RCD&#39;).show();
+;"><input id="ctl00_RateArticle_VoteRBL_3" type="radio" name="ctl00$RateArticle$VoteRBL" value="4" onclick="ChkRtctl00_RateArticle(4, 37292);
+$(&#39;#ctl00_RateArticle_RCD&#39;).show();
+;"><input id="ctl00_RateArticle_VoteRBL_4" type="radio" name="ctl00$RateArticle$VoteRBL" value="5" onclick="ChkRtctl00_RateArticle(5, 37292);
+$(&#39;#ctl00_RateArticle_RCD&#39;).show();
+;"></span> 
+
+						
+					</span>
+
+				</td>
+
+				<td id="ctl00_RateArticle_EndForm" align="left">
+					<i>Excellent</i>
+				</td>
+
+				<td>	
+					<input type="submit" name="ctl00$RateArticle$SubmitRateBtn" value="Vote" onclick="return PostBack_ctl00_RateArticle_RateItemWrapper();" id="ctl00_RateArticle_SubmitRateBtn" class="button">
+				</td>
+			</tr>
+			</tbody></table>
+			<span id="ctl00_RateArticle_ErrorMessage" class="error"></span>
+		</td>
+	</tr>
+	</tbody></table>
+	<div class="hover-container">
+		<div id="ctl00_RateArticle_RCD" class="rating-comment align-left float-right">
+			Add a reason or comment to your vote: <a href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#" id="clear-rate_ctl00_RateArticle_RCD" title="close">x</a><br>
+			<textarea class="RateComment" rows="5" cols="60" style="width:98%;"></textarea>
+			<span id="ctl00_RateArticle_CommentReq" class="subdue">Votes of 3 or less require a comment</span>
+		</div>
+	</div>
+</div>
+
+						</div>
+						</div>
+						
+
+					</form>
+
+					
+					<div style="margin:auto;padding:0px 10px;white-space:nowrap;overflow:hidden;width:468px;height:60px">		  
+						<div class="lqm_ad" lqm_publisher="lqm.codeproject.site" lqm_zone="ros" lqm_format="468x60" lqm_tags="C#1.0,C#2.0,C#3.0,.NET3.5,C#,ASP.NET,Javascript,CSS,.NET,Dev,Beginner"><iframe id="lqmad3" width="468" height="60" marginwidth="0" marginheight="0" frameborder="0" scrolling="no"></iframe></div>
+						
+					</div>
+					
+
+					
+					
+					<h2>Comments and Discussions</h2>
+					<a name="_comments" id="_comments">&nbsp;</a><div id="_MessageBoard" onclick="return SwitchMessage(event, null)">
+<table id="ForumTable" class="box forum" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="forum-header1 highlight"><b>You must <a href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f37292%2fDisable-Print-Screen-Key-and-All-Keyboard-Keys-in%2f%3ffid%3d1542289%26df%3d90%26mpp%3d25%26noise%3d3%26prof%3dFalse%26sort%3dPosition%26view%3dQuick">Sign In</a> to use this message board.</b> (<a href="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f37292%2fDisable-Print-Screen-Key-and-All-Keyboard-Keys-in%2f%3ffid%3d1542289%26df%3d90%26mpp%3d25%26noise%3d3%26prof%3dFalse%26sort%3dPosition%26view%3dQuick">secure sign-in</a>)</td>
+</tr><tr>
+<td><table width="100%" border="0" cellpadding="3px" cellspacing="0">
+<tbody><tr class="forum-header1">
+<td style="white-space:nowrap;"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/info-16.gif" alt="FAQ" style="border-width:0;width:16px;height:16px;vertical-align:middle;">&nbsp;<a href="http://www.codeproject.com/KB/FAQs/MessageBoardsFAQ.aspx"><b>FAQ</b></a>&nbsp;</td><td colspan="2" style="white-space:nowrap;text-align:right;"><form action="http://www.codeproject.com/Search.aspx?fid=0" method="get" style="margin:0;padding:0;">
+<input type="hidden" name="fid" value="1542289"><input type="text" class="Frm_Input" name="qf">&nbsp;<input type="submit" value="Search" class="button">
+</form></td>
+</tr><tr class="forum-header2">
+<td colspan="3" style="width:100%;"><div style="text-align:right;">
+<form action="http://www.codeproject.com/script/Forums/SetOptions.aspx?floc=%2fArticles%2f37292%2fDisable-Print-Screen-Key-and-All-Keyboard-Keys-in%2f&fid=1542289&df=90&mpp=25&noise=3&prof=False&sort=Position&view=Quick" method="get" style="margin:0;padding:0;">
+<input type="hidden" name="fid" value="1542289"><input type="hidden" name="currentQS" value="?floc=%2fArticles%2f37292%2fDisable-Print-Screen-Key-and-All-Keyboard-Keys-in%2f&amp;fid=1542289&amp;df=90&amp;mpp=25&amp;noise=3&amp;prof=False&amp;sort=Position&amp;view=Quick"><input type="hidden" name="floc" value="/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in/"><input type="checkbox" name="prof" id="prof" style="vertical-align:middle;"><label for="prof">Profile popups</label>&nbsp;&nbsp;&nbsp;&nbsp;Noise level<select size="1" class="Frm_DropDown" name="noise">
+<option value="1">Very High</option><option value="2">High</option><option selected="" value="3">Medium</option><option value="4">Low</option><option value="5">Very Low</option>
+</select>&nbsp;&nbsp;Layout<select size="1" class="Frm_DropDown" name="view">
+<option selected="" value="Quick">Normal</option><option value="Topic">Expand Posts only</option><option value="Expanded">Expand Posts &amp; Replies</option><option value="Thread">Thread View</option><option value="Normal">No Javascript</option><option value="Preview">No JS + Preview</option>
+</select>&nbsp;&nbsp;Per page<select size="1" class="Frm_DropDown" name="mpp">
+<option value="10">10</option><option selected="" value="25">25</option><option value="50">50</option>
+</select>&nbsp;&nbsp;&nbsp;<input type="submit" value="Update" name="SetOpt" class="button">
+</form>
+</div></td>
+</tr>
+</tbody></table></td>
+</tr><tr>
+<td><a name="xx0xx"></a><table border="0" cellpadding="2px" cellspacing="0" width="100%">
+<tbody><tr class="forum-navbar">
+<td>&nbsp;</td><td> <a href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in/?fid=1542289&df=90&mpp=25&noise=3&prof=False&sort=Position&view=Quick">Refresh</a></td><td style="text-align:right;white-space:nowrap;"><span class="subdue">First</span> <span class="subdue">Prev</span> <span class="subdue">Next</span></td>
+</tr>
+</tbody></table></td>
+</tr><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%" class="fixed-layout blank-background">
+<tbody><tr>
+<td><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/t(2).gif" border="0" width="1px" height="5px" alt=""></td>
+</tr><tr class="MsgHd Rt HdUnSel " id="F3898770_h0">
+<td width="100%"><table class="quickHd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr class="hover-row">
+<td width="16px" class="Frm_MsgIndent"><a name="xx3898770xx"></a><img height="16px" width="16px" align="top" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/msg_general.gif" alt="General"></td><td class="Frm_MsgSubject hover-container"><a class="message-link" name="3898770" parent="0" thread="3898770" href="http://www.codeproject.com/Messages/3898770/How-you-disabled-HTML-view-source.aspx">How you disabled HTML view source</a> <a onclick="return Pin(this);" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#" title="Click to pin message"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/pin.gif" border="0" align="top" alt="Pin" width="13px" height="12px"></a></td><td class="Frm_MsgIcon"><img border="0" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/member_sm.gif" title="member" alt="member" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=7577507">Sankaroo7</a></td><td class="Frm_MsgDate" style="vertical-align:top;white-space:nowrap;">17:26 19 May '11 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F3898770_h1" style="display:none;">
+<td width="100%"><table class="quickBd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width:16px;"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/t(2).gif" height="1px" width="16px" alt=""></td><td class="MsgBd BdSel "><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">Amazing Work!...Great Stuff Sayed<img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/thumbs_up.gif" align="top" alt="Thumbs Up | :thumbsup:"> <br>
+&nbsp;<br>
+but i didn't understand that how you disabled the HTML Viewsource...<br>
+&nbsp;<br>
+will you explain me clearly...<br>
+&nbsp;<br>
+reply me<br>
+&nbsp;<br>
+Shankar.M<br></td>
+</tr><tr style="vertical-align:middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f37292%2fDisable-Print-Screen-Key-and-All-Keyboard-Keys-in">Sign In</a>·<a class="toolbar" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in/?fid=1542289&df=90&mpp=25&sort=Position&tid=3898770" title="View Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/3898770/How-you-disabled-HTML-view-source.aspx" title="Get permanent link">Permalink</a></td><td class="msg-footer" style="text-align:right;"><span id="MVF3898770" style="white-space:nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="root msg-divide"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/t(2).gif" border="0" width="1px" height="1px" alt=""></td>
+</tr><tr class="MsgHd LoVote Rt HdUnSel " id="F3285261_h0">
+<td width="100%"><table class="quickHd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr class="hover-row">
+<td width="16px" class="Frm_MsgIndent"><a name="xx3285261xx"></a><img height="16px" width="16px" align="top" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/msg_general.gif" alt="General"></td><td class="Frm_MsgSubject hover-container"><a class="message-link" name="3285261" parent="0" thread="3285261" href="http://www.codeproject.com/Messages/3285261/alternative-lock-key.aspx">alternative lock key</a> <a onclick="return Pin(this);" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#" title="Click to pin message"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/pin.gif" border="0" align="top" alt="Pin" width="13px" height="12px"></a></td><td class="Frm_MsgIcon"><img border="0" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/member_sm.gif" title="member" alt="member" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=5885010">Tybalt33</a></td><td class="Frm_MsgDate" style="vertical-align:top;white-space:nowrap;">2:00 26 Nov '09 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F3285261_h1" style="display:none;">
+<td width="100%"><table class="quickBd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width:16px;"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/t(2).gif" height="1px" width="16px" alt=""></td><td class="MsgBd BdSel "><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2"><pre><span class="code-keyword">&lt;</span><span class="code-leadattribute">body</span>  <span class="code-attribute">önselectstart</span><span class="code-keyword">="</span><span class="code-keyword">return false;"</span><span class="code-attribute">&gt;</span></pre><br></td>
+</tr><tr style="vertical-align:middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f37292%2fDisable-Print-Screen-Key-and-All-Keyboard-Keys-in">Sign In</a>·<a class="toolbar" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in/?fid=1542289&df=90&mpp=25&sort=Position&tid=3285261" title="View Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/3285261/alternative-lock-key.aspx" title="Get permanent link">Permalink</a></td><td class="msg-footer" style="text-align:right;"><span id="MVF3285261" style="white-space:nowrap;">2.00/5 (1 vote) </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="root msg-divide"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/t(2).gif" border="0" width="1px" height="1px" alt=""></td>
+</tr><tr class="MsgHd LoVote Rt HdUnSel " id="F3278842_h0">
+<td width="100%"><table class="quickHd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr class="hover-row">
+<td width="16px" class="Frm_MsgIndent"><a name="xx3278842xx"></a><img height="16px" width="16px" align="top" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/msg_question.gif" alt="Question"></td><td class="Frm_MsgSubject hover-container"><a class="message-link" name="3278842" parent="0" thread="3278842" href="http://www.codeproject.com/Messages/3278842/how-to-combined-this-code-with-the-code-i-wrote.aspx">how to combined this code with the code i wrote?</a> <a onclick="return Pin(this);" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#" title="Click to pin message"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/pin.gif" border="0" align="top" alt="Pin" width="13px" height="12px"></a></td><td class="Frm_MsgIcon"><img border="0" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/member_sm.gif" title="member" alt="member" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=6728275">yellow66</a></td><td class="Frm_MsgDate" style="vertical-align:top;white-space:nowrap;">20:48 19 Nov '09 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F3278842_h1" style="display:none;">
+<td width="100%"><table class="quickBd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width:16px;"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/t(2).gif" height="1px" width="16px" alt=""></td><td class="MsgBd BdSel "><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">I would love to combined this code with the one i wrote, so if the user clicked "no", and the program won't do next step to ask me insert password, it will just closed the window.<br>
+&nbsp;<br>
+the is my code:<br>
+&nbsp;<br>
+&lt;html&gt;<br>
+&nbsp;<br>
+&lt;head&gt;<br>
+&lt;meta http-equiv="Content-Type" content="text/html"&gt;<br>
+&lt;script language="javascript" src="swf.js"&gt;&lt;/script&gt;<br>
+&lt;title&gt; GAN &lt;/title&gt;<br>
+&lt;!-- saved from url=(0014)about:internet --&gt;<br>
+&lt;/head&gt;<br>
+&nbsp;<br>
+&lt;/script language="javascript"&gt;<br>
+&lt;!--<br>
+  function getSlideIndex() {<br>
+    var strUrl = document.location.href;<br>
+    if (strUrl.indexOf('?') == -1 || strUrl.indexOf('=') == -1) {<br>
+      return 0;<br>
+    }<br>
+&nbsp;<br>
+    return strUrl.substring(strUrl.indexOf('=') + 1, strUrl.length);<br>
+  }<br>
+//--&gt;<br>
+&lt;/script&gt;<br>
+&nbsp;<br>
+&lt;body&gt;<br>
+<center><br>
+  <br><table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
+   <tbody><tr>
+     <td width="100%" height="100%" align="center" valign="center"><br>
+       &lt;script language="javascript"&gt;<br>
+         writeSwf("shell.swf?slideIndex=" + getSlideIndex(), "100%", "100%");<br>
+       &lt;/script&gt;<br>
+    </td>
+  </tr>
+</tbody></table>
+</center><br>
+&lt;/body&gt;<br>
+&nbsp;<br>
+&lt;/html&gt;<br></td>
+</tr><tr style="vertical-align:middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f37292%2fDisable-Print-Screen-Key-and-All-Keyboard-Keys-in">Sign In</a>·<a class="toolbar" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in/?fid=1542289&df=90&mpp=25&sort=Position&tid=3278842" title="View Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/3278842/how-to-combined-this-code-with-the-code-i-wrote.aspx" title="Get permanent link">Permalink</a></td><td class="msg-footer" style="text-align:right;"><span id="MVF3278842" style="white-space:nowrap;">1.50/5 (2 votes) </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="root msg-divide"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/t(2).gif" border="0" width="1px" height="1px" alt=""></td>
+</tr><tr class="MsgHd LoVote Rt HdUnSel " id="F3169545_h0">
+<td width="100%"><table class="quickHd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr class="hover-row">
+<td width="16px" class="Frm_MsgIndent"><a name="xx3169545xx"></a><img height="16px" width="16px" align="top" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/msg_question.gif" alt="Question"></td><td class="Frm_MsgSubject hover-container"><a class="message-link" name="3169545" parent="0" thread="3169545" href="http://www.codeproject.com/Messages/3169545/What-if-I-want-to-disable-on-print-screen.aspx">What if I want to disable on print screen</a> <a onclick="return Pin(this);" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#" title="Click to pin message"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/pin.gif" border="0" align="top" alt="Pin" width="13px" height="12px"></a></td><td class="Frm_MsgIcon"><img border="0" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/member_sm.gif" title="member" alt="member" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=3677777">Aman Bhullar</a></td><td class="Frm_MsgDate" style="vertical-align:top;white-space:nowrap;">20:45 21 Aug '09 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F3169545_h1" style="display:none;">
+<td width="100%"><table class="quickBd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width:16px;"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/t(2).gif" height="1px" width="16px" alt=""></td><td class="MsgBd BdSel "><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">Hi<br>
+&nbsp;<br>
+Thanks for a nice code.<br>
+I have tried this code earlier, but the Issue is it also disable the text copy/paste option.<br>
+&nbsp;<br>
+I just want to disable the print screen, not the copy/paste of Text data <br>
+&nbsp;<br>
+<div class="ForumSig">Regards<br>
+Aman Bhullar<br>
+<a href="http://www.arlivesupport.com/">www.arlivesupport.com</a>[<a href="http://www.arlivesupport.com/" target="_blank" title="New Window">^</a>]</div><br></td>
+</tr><tr style="vertical-align:middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f37292%2fDisable-Print-Screen-Key-and-All-Keyboard-Keys-in">Sign In</a>·<a class="toolbar" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in/?fid=1542289&df=90&mpp=25&sort=Position&tid=3169545" title="View Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/3169545/What-if-I-want-to-disable-on-print-screen.aspx" title="Get permanent link">Permalink</a></td><td class="msg-footer" style="text-align:right;"><span id="MVF3169545" style="white-space:nowrap;">2.00/5 (1 vote) </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="root msg-divide"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/t(2).gif" border="0" width="1px" height="1px" alt=""></td>
+</tr><tr class="MsgHd LoVote Rt HdUnSel " id="F3136142_h0">
+<td width="100%"><table class="quickHd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr class="hover-row">
+<td width="16px" class="Frm_MsgIndent"><a name="xx3136142xx"></a><img height="16px" width="16px" align="top" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/msg_general.gif" alt="General"></td><td class="Frm_MsgSubject hover-container"><a class="message-link" name="3136142" parent="0" thread="3136142" href="http://www.codeproject.com/Messages/3136142/Re-IE-8-Popup.aspx">Re: IE 8 Popup</a> <a onclick="return Pin(this);" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#" title="Click to pin message"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/pin.gif" border="0" align="top" alt="Pin" width="13px" height="12px"></a></td><td class="Frm_MsgIcon"><img border="0" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/member_sm.gif" title="member" alt="member" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=5127539">sevensnake77</a></td><td class="Frm_MsgDate" style="vertical-align:top;white-space:nowrap;">6:39 27 Jul '09 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F3136142_h1" style="display:none;">
+<td width="100%"><table class="quickBd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width:16px;"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/t(2).gif" height="1px" width="16px" alt=""></td><td class="MsgBd BdSel "><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">Yes, How can I not have the popup show up, I want it to automatically allow with out anyone seeing it. <img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/smiley_sigh.gif" align="top" alt="Sigh | :sigh:"> <br></td>
+</tr><tr style="vertical-align:middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f37292%2fDisable-Print-Screen-Key-and-All-Keyboard-Keys-in">Sign In</a>·<a class="toolbar" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in/?fid=1542289&df=90&mpp=25&sort=Position&tid=3136142" title="View Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/3136142/Re-IE-8-Popup.aspx" title="Get permanent link">Permalink</a></td><td class="msg-footer" style="text-align:right;"><span id="MVF3136142" style="white-space:nowrap;">2.00/5 (1 vote) </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="root msg-divide"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/t(2).gif" border="0" width="1px" height="1px" alt=""></td>
+</tr><tr class="MsgHd LoVote Rt HdUnSel " id="F3090605_h0">
+<td width="100%"><table class="quickHd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr class="hover-row">
+<td width="16px" class="Frm_MsgIndent"><a name="xx3090605xx"></a><img height="16px" width="16px" align="top" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/msg_general.gif" alt="General"></td><td class="Frm_MsgSubject hover-container"><a class="message-link" name="3090605" parent="0" thread="3090605" href="http://www.codeproject.com/Messages/3090605/My-vote-of-1.aspx">My vote of 1</a> <a onclick="return Pin(this);" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#" title="Click to pin message"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/pin.gif" border="0" align="top" alt="Pin" width="13px" height="12px"></a></td><td class="Frm_MsgIcon"><img border="0" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/member_sm.gif" title="member" alt="member" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=2536303">James Luterek</a></td><td class="Frm_MsgDate" style="vertical-align:top;white-space:nowrap;">4:07 22 Jun '09 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F3090605_h1" style="display:none;">
+<td width="100%"><table class="quickBd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width:16px;"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/t(2).gif" height="1px" width="16px" alt=""></td><td class="MsgBd BdSel "><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">bad code<br></td>
+</tr><tr style="vertical-align:middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f37292%2fDisable-Print-Screen-Key-and-All-Keyboard-Keys-in">Sign In</a>·<a class="toolbar" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in/?fid=1542289&df=90&mpp=25&sort=Position&tid=3090605" title="View Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/3090605/My-vote-of-1.aspx" title="Get permanent link">Permalink</a></td><td class="msg-footer" style="text-align:right;"><span id="MVF3090605" style="white-space:nowrap;">1.00/5 (1 vote) </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="msg-divide"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/t(2).gif" border="0" width="1px" height="1px" alt=""></td>
+</tr><tr class="MsgHd HdUnSel " id="F3092772_h0">
+<td width="100%"><table class="quickHd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr class="hover-row">
+<td width="34px" class="Frm_MsgIndent"><a name="xx3092772xx"></a><img height="16px" width="16px" align="top" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/msg_general.gif" alt="General"></td><td class="Frm_MsgSubject hover-container"><a class="message-link" name="3092772" parent="3090605" thread="3090605" href="http://www.codeproject.com/Messages/3092772/Re-My-vote-of-1.aspx">Re: My vote of 1</a> <a onclick="return Pin(this);" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#" title="Click to pin message"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/pin.gif" border="0" align="top" alt="Pin" width="13px" height="12px"></a></td><td class="Frm_MsgIcon"><img border="0" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/member_sm.gif" title="member" alt="member" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=1140200">Wael Sayed</a></td><td class="Frm_MsgDate" style="vertical-align:top;white-space:nowrap;">8:57 23 Jun '09 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F3092772_h1" style="display:none;">
+<td width="100%"><table class="quickBd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width:34px;"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/t(2).gif" height="1px" width="34px" alt=""></td><td class="MsgBd BdSel "><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">Thanks for your vote  <img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/smiley_smile.gif" align="top" alt="Smile | :)">  <br>
+By the way this article for beginner and <br>
+If you find something wrong in my article please let me know to correct it,<br>
+We are here to share knowledge. <br>
+&nbsp;<br>
+<div class="ForumSig">Wael Sayed<br>
+Software developer</div><br></td>
+</tr><tr style="vertical-align:middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f37292%2fDisable-Print-Screen-Key-and-All-Keyboard-Keys-in">Sign In</a>·<a class="toolbar" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in/?fid=1542289&df=90&mpp=25&sort=Position&tid=3090605" title="View Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/3092772/Re-My-vote-of-1.aspx" title="Get permanent link">Permalink</a></td><td class="msg-footer" style="text-align:right;"><span id="MVF3092772" style="white-space:nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="root msg-divide"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/t(2).gif" border="0" width="1px" height="1px" alt=""></td>
+</tr><tr class="MsgHd Rt HdUnSel " id="F3088904_h0">
+<td width="100%"><table class="quickHd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr class="hover-row">
+<td width="16px" class="Frm_MsgIndent"><a name="xx3088904xx"></a><img height="16px" width="16px" align="top" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/msg_general.gif" alt="General"></td><td class="Frm_MsgSubject hover-container"><a class="message-link" name="3088904" parent="0" thread="3088904" href="http://www.codeproject.com/Messages/3088904/Use-This.aspx">Use This</a> <a onclick="return Pin(this);" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#" title="Click to pin message"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/pin.gif" border="0" align="top" alt="Pin" width="13px" height="12px"></a></td><td class="Frm_MsgIcon"><img border="0" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/member_sm.gif" title="member" alt="member" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=2299530">aa.azizkhani</a></td><td class="Frm_MsgDate" style="vertical-align:top;white-space:nowrap;">0:48 20 Jun '09 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F3088904_h1" style="display:none;">
+<td width="100%"><table class="quickBd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width:16px;"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/t(2).gif" height="1px" width="16px" alt=""></td><td class="MsgBd BdSel "><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">//////////////////////////////this code block copy/past ,print,select,drag,drop,mouse down ,mouse up/////////<br>
+document.write(unescape("%3C%53%43%52%49%50%54%20%4C%41%4E%47%55%41%47%45%3D%22%4A%61%76%61%53%63%72%69%70%74%22%3E%3C%21%2D%2D%0D%0A%68%70%5F%6F%6B%3D%74%72%75%65%3B%66%75%6E%63%74%69%6F%6E%20%68%70%5F%64%30%30%28%73%29%7B%69%66%28%21%68%70%5F%6F%6B%29%72%65%74%75%72%6E%3B%64%6F%63%75%6D%65%6E%74%2E%77%72%69%74%65%28%73%29%7D%2F%2F%2D%2D%3E%3C%2F%53%43%52%49%50%54%3E"));<br>
+hp_d00(unescape("%3C%53%43%52%49%50%54%20%4C%41%4E%47%55%41%47%45%3D%22%4A%61%76%61%53%63%72%69%70%74%22%3E%3C%21%2D%2D%0D%0A%66%75%6E%63%74%69%6F%6E%20%68%70%5F%6E%65%28%29%7B%72%65%74%75%72%6E%20%74%72%75%65%7D%6F%6E%65%72%72%6F%72%3D%68%70%5F%6E%65%3B%66%75%6E%63%74%69%6F%6E%20%68%70%5F%64%6E%28%61%29%7B%72%65%74%75%72%6E%20%66%61%6C%73%65%7D%66%75%6E%63%74%69%6F%6E%20%68%70%5F%63%6D%28%29%7B%72%65%74%75%72%6E%20%66%61%6C%73%65%7D%66%75%6E%63%74%69%6F%6E%20%68%70%5F%6D%64%28%65%29%7B%69%66%28%65%2E%77%68%69%63%68%3D%3D%32%7C%7C%65%2E%77%68%69%63%68%3D%3D%33%29%7B%72%65%74%75%72%6E%20%66%61%6C%73%65%7D%69%66%28%65%2E%77%68%69%63%68%3D%3D%31%29%7B%77%69%6E%64%6F%77%2E%63%61%70%74%75%72%65%45%76%65%6E%74%73%28%45%76%65%6E%74%2E%4D%4F%55%53%45%4D%4F%56%45%29%3B%77%69%6E%64%6F%77%2E%6F%6E%6D%6F%75%73%65%6D%6F%76%65%3D%68%70%5F%64%6E%7D%7D%66%75%6E%63%74%69%6F%6E%20%68%70%5F%6D%75%28%65%29%7B%69%66%28%65%2E%77%68%69%63%68%3D%3D%31%29%7B%77%69%6E%64%6F%77%2E%72%65%6C%65%61%73%65%45%76%65%6E%74%73%28%45%76%65%6E%74%2E%4D%4F%55%53%45%4D%4F%56%45%29%3B%77%69%6E%64%6F%77%2E%6F%6E%6D%6F%75%73%65%6D%6F%76%65%3D%6E%75%6C%6C%7D%7D%69%66%28%6E%61%76%69%67%61%74%6F%72%2E%61%70%70%4E%61%6D%65%2E%69%6E%64%65%78%4F%66%28%27%49%6E%74%65%72%6E%65%74%20%45%78%70%6C%6F%72%65%72%27%29%3D%3D%2D%31%7C%7C%6E%61%76%69%67%61%74%6F%72%2E%75%73%65%72%41%67%65%6E%74%2E%69%6E%64%65%78%4F%66%28%27%4D%53%49%45%27%29%21%3D%2D%31%29%7B%69%66%28%64%6F%63%75%6D%65%6E%74%2E%61%6C%6C%29%7B%64%6F%63%75%6D%65%6E%74%2E%6F%6E%63%6F%6E%74%65%78%74%6D%65%6E%75%3D%68%70%5F%63%6D%3B%64%6F%63%75%6D%65%6E%74%2E%6F%6E%73%65%6C%65%63%74%73%74%61%72%74%3D%68%70%5F%64%6E%7D%69%66%28%64%6F%63%75%6D%65%6E%74%2E%6C%61%79%65%72%73%29%7B%77%69%6E%64%6F%77%2E%63%61%70%74%75%72%65%45%76%65%6E%74%73%28%45%76%65%6E%74%2E%4D%4F%55%53%45%55%50%7C%45%76%65%6E%74%2E%4D%4F%55%53%45%44%4F%57%4E%29%3B%77%69%6E%64%6F%77%2E%6F%6E%6D%6F%75%73%65%64%6F%77%6E%3D%68%70%5F%6D%64%3B%77%69%6E%64%6F%77%2E%6F%6E%6D%6F%75%73%65%75%70%3D%68%70%5F%6D%75%7D%69%66%28%64%6F%63%75%6D%65%6E%74%2E%67%65%74%45%6C%65%6D%65%6E%74%42%79%49%64%26%26%21%64%6F%63%75%6D%65%6E%74%2E%61%6C%6C%29%7B%64%6F%63%75%6D%65%6E%74%2E%6F%6E%63%6F%6E%74%65%78%74%6D%65%6E%75%3D%68%70%5F%63%6D%3B%64%6F%63%75%6D%65%6E%74%2E%6F%6E%6D%6F%75%73%65%64%6F%77%6E%3D%68%70%5F%64%6E%7D%7D%69%66%28%77%69%6E%64%6F%77%2E%6C%6F%63%61%74%69%6F%6E%2E%68%72%65%66%2E%73%75%62%73%74%72%69%6E%67%28%30%2C%34%29%3D%3D%22%66%69%6C%65%22%29%77%69%6E%64%6F%77%2E%6C%6F%63%61%74%69%6F%6E%3D%22%61%62%6F%75%74%3A%62%6C%61%6E%6B%22%3B%66%75%6E%63%74%69%6F%6E%20%68%70%5F%6E%6C%73%28%29%7B%77%69%6E%64%6F%77%2E%73%74%61%74%75%73%3D%22%22%3B%73%65%74%54%69%6D%65%6F%75%74%28%22%68%70%5F%6E%6C%73%28%29%22%2C%31%30%29%7D%68%70%5F%6E%6C%73%28%29%3B%66%75%6E%63%74%69%6F%6E%20%68%70%5F%64%70%31%28%29%7B%66%6F%72%28%69%3D%30%3B%69%3C%64%6F%63%75%6D%65%6E%74%2E%61%6C%6C%2E%6C%65%6E%67%74%68%3B%69%2B%2B%29%7B%69%66%28%64%6F%63%75%6D%65%6E%74%2E%61%6C%6C%5B%69%5D%2E%73%74%79%6C%65%2E%76%69%73%69%62%69%6C%69%74%79%21%3D%22%68%69%64%64%65%6E%22%29%7B%64%6F%63%75%6D%65%6E%74%2E%61%6C%6C%5B%69%5D%2E%73%74%79%6C%65%2E%76%69%73%69%62%69%6C%69%74%79%3D%22%68%69%64%64%65%6E%22%3B%64%6F%63%75%6D%65%6E%74%2E%61%6C%6C%5B%69%5D%2E%69%64%3D%22%68%70%5F%69%64%22%7D%7D%7D%3B%66%75%6E%63%74%69%6F%6E%20%68%70%5F%64%70%32%28%29%7B%66%6F%72%28%69%3D%30%3B%69%3C%64%6F%63%75%6D%65%6E%74%2E%61%6C%6C%2E%6C%65%6E%67%74%68%3B%69%2B%2B%29%7B%69%66%28%64%6F%63%75%6D%65%6E%74%2E%61%6C%6C%5B%69%5D%2E%69%64%3D%3D%22%68%70%5F%69%64%22%29%64%6F%63%75%6D%65%6E%74%2E%61%6C%6C%5B%69%5D%2E%73%74%79%6C%65%2E%76%69%73%69%62%69%6C%69%74%79%3D%22%22%7D%7D%3B%77%69%6E%64%6F%77%2E%6F%6E%62%65%66%6F%72%65%70%72%69%6E%74%3D%68%70%5F%64%70%31%3B%77%69%6E%64%6F%77%2E%6F%6E%61%66%74%65%72%70%72%69%6E%74%3D%68%70%5F%64%70%32%3B%66%75%6E%63%74%69%6F%6E%20%68%70%5F%64%63%28%29%7B%68%70%5F%74%61%2E%63%72%65%61%74%65%54%65%78%74%52%61%6E%67%65%28%29%2E%65%78%65%63%43%6F%6D%6D%61%6E%64%28%22%43%6F%70%79%22%29%3B%73%65%74%54%69%6D%65%6F%75%74%28%22%68%70%5F%64%63%28%29%22%2C%33%30%30%29%7D%69%66%28%6E%61%76%69%67%61%74%6F%72%2E%61%70%70%4E%61%6D%65%2E%69%6E%64%65%78%4F%66%28%27%49%6E%74%65%72%6E%65%74%20%45%78%70%6C%6F%72%65%72%27%29%3D%3D%2D%31%7C%7C%6E%61%76%69%67%61%74%6F%72%2E%75%73%65%72%41%67%65%6E%74%2E%69%6E%64%65%78%4F%66%28%27%4D%53%49%45%27%29%21%3D%2D%31%29%7B%69%66%28%64%6F%63%75%6D%65%6E%74%2E%61%6C%6C%26%26%6E%61%76%69%67%61%74%6F%72%2E%75%73%65%72%41%67%65%6E%74%2E%69%6E%64%65%78%4F%66%28%27%4F%70%65%72%61%27%29%3D%3D%2D%31%29%7B%64%6F%63%75%6D%65%6E%74%2E%77%72%69%74%65%28%27%3C%64%69%76%20%73%74%79%6C%65%3D%22%70%6F%73%69%74%69%6F%6E%3A%61%62%73%6F%6C%75%74%65%3B%6C%65%66%74%3A%2D%31%30%30%30%70%78%3B%74%6F%70%3A%2D%31%30%30%30%70%78%22%3E%3C%69%6E%70%75%74%20%74%79%70%65%3D%22%74%65%78%74%61%72%65%61%22%20%6E%61%6D%65%3D%22%68%70%5F%74%61%22%20%76%61%6C%75%65%3D%22%20%22%20%73%74%79%6C%65%3D%22%76%69%73%69%62%69%6C%69%74%79%3A%68%69%64%64%65%6E%22%3E%3C%2F%64%69%76%3E%27%29%3B%68%70%5F%64%63%28%29%7D%7D%66%75%6E%63%74%69%6F%6E%20%68%70%5F%6E%64%64%28%29%7B%72%65%74%75%72%6E%20%66%61%6C%73%65%7D%64%6F%63%75%6D%65%6E%74%2E%6F%6E%64%72%61%67%73%74%61%72%74%3D%68%70%5F%6E%64%64%3B%69%66%28%6E%61%76%69%67%61%74%6F%72%2E%61%70%70%4E%61%6D%65%2E%69%6E%64%65%78%4F%66%28%27%49%6E%74%65%72%6E%65%74%20%45%78%70%6C%6F%72%65%72%27%29%21%3D%2D%31%26%26%6E%61%76%69%67%61%74%6F%72%2E%75%73%65%72%41%67%65%6E%74%2E%69%6E%64%65%78%4F%66%28%27%4D%53%49%45%27%29%3D%3D%2D%31%29%68%70%5F%6F%6B%3D%66%61%6C%73%65%3B%69%66%28%6E%61%76%69%67%61%74%6F%72%2E%75%73%65%72%41%67%65%6E%74%2E%69%6E%64%65%78%4F%66%28%27%4F%70%65%72%61%27%29%21%3D%2D%31%29%77%69%6E%64%6F%77%2E%6C%6F%63%61%74%69%6F%6E%3D%22%61%62%6F%75%74%3A%62%6C%61%6E%6B%22%3B%69%66%28%66%72%61%6D%65%73%29%7B%69%66%28%74%6F%70%2E%66%72%61%6D%65%73%2E%6C%65%6E%67%74%68%3E%30%29%74%6F%70%2E%6C%6F%63%61%74%69%6F%6E%2E%68%72%65%66%3D%73%65%6C%66%2E%6C%6F%63%61%74%69%6F%6E%3B%7D%2F%2F%2D%2D%3E%3C%2F%53%43%52%49%50%54%3E"));<br>
+////////////////////////////////////////<br></td>
+</tr><tr style="vertical-align:middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f37292%2fDisable-Print-Screen-Key-and-All-Keyboard-Keys-in">Sign In</a>·<a class="toolbar" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in/?fid=1542289&df=90&mpp=25&sort=Position&tid=3088904" title="View Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/3088904/Use-This.aspx" title="Get permanent link">Permalink</a></td><td class="msg-footer" style="text-align:right;"><span id="MVF3088904" style="white-space:nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="root msg-divide"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/t(2).gif" border="0" width="1px" height="1px" alt=""></td>
+</tr><tr class="MsgHd Rt HdUnSel " id="F3088334_h0">
+<td width="100%"><table class="quickHd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr class="hover-row">
+<td width="16px" class="Frm_MsgIndent"><a name="xx3088334xx"></a><img height="16px" width="16px" align="top" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/msg_general.gif" alt="General"></td><td class="Frm_MsgSubject hover-container"><a class="message-link" name="3088334" parent="0" thread="3088334" href="http://www.codeproject.com/Messages/3088334/Excellent.aspx">Excellent</a> <a onclick="return Pin(this);" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#" title="Click to pin message"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/pin.gif" border="0" align="top" alt="Pin" width="13px" height="12px"></a></td><td class="Frm_MsgIcon"><img border="0" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/member_sm.gif" title="member" alt="member" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=6306456">Alex_Jones</a></td><td class="Frm_MsgDate" style="vertical-align:top;white-space:nowrap;">8:17 19 Jun '09 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F3088334_h1" style="display:none;">
+<td width="100%"><table class="quickBd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width:16px;"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/t(2).gif" height="1px" width="16px" alt=""></td><td class="MsgBd BdSel "><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2"><b><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/thumbs_up.gif" align="top" alt="Thumbs Up | :thumbsup:"> This is very well artical.<img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/thumbs_up.gif" align="top" alt="Thumbs Up | :thumbsup:"> </b><br></td>
+</tr><tr style="vertical-align:middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f37292%2fDisable-Print-Screen-Key-and-All-Keyboard-Keys-in">Sign In</a>·<a class="toolbar" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in/?fid=1542289&df=90&mpp=25&sort=Position&tid=3088334" title="View Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/3088334/Excellent.aspx" title="Get permanent link">Permalink</a></td><td class="msg-footer" style="text-align:right;"><span id="MVF3088334" style="white-space:nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="root msg-divide"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/t(2).gif" border="0" width="1px" height="1px" alt=""></td>
+</tr><tr class="MsgHd LoVote Rt HdUnSel " id="F3087020_h0">
+<td width="100%"><table class="quickHd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr class="hover-row">
+<td width="16px" class="Frm_MsgIndent"><a name="xx3087020xx"></a><img height="16px" width="16px" align="top" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/msg_general.gif" alt="General"></td><td class="Frm_MsgSubject hover-container"><a class="message-link" name="3087020" parent="0" thread="3087020" href="http://www.codeproject.com/Messages/3087020/My-vote-of-1.aspx">My vote of 1</a> <a onclick="return Pin(this);" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#" title="Click to pin message"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/pin.gif" border="0" align="top" alt="Pin" width="13px" height="12px"></a></td><td class="Frm_MsgIcon"><img border="0" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/member_sm.gif" title="member" alt="member" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=1061260">taxexile</a></td><td class="Frm_MsgDate" style="vertical-align:top;white-space:nowrap;">12:34 18 Jun '09 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F3087020_h1" style="display:none;">
+<td width="100%"><table class="quickBd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width:16px;"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/t(2).gif" height="1px" width="16px" alt=""></td><td class="MsgBd BdSel "><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">Exams are for testing how knowledgeable about a subject you are. Some of your sample will be able to bypass all of these measures very easily; i.e. disable javascript! That is a secondary<br></td>
+</tr><tr style="vertical-align:middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f37292%2fDisable-Print-Screen-Key-and-All-Keyboard-Keys-in">Sign In</a>·<a class="toolbar" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in/?fid=1542289&df=90&mpp=25&sort=Position&tid=3087020" title="View Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/3087020/My-vote-of-1.aspx" title="Get permanent link">Permalink</a></td><td class="msg-footer" style="text-align:right;"><span id="MVF3087020" style="white-space:nowrap;">1.80/5 (4 votes) </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="root msg-divide"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/t(2).gif" border="0" width="1px" height="1px" alt=""></td>
+</tr><tr class="MsgHd LoVote Rt HdUnSel " id="F3087006_h0">
+<td width="100%"><table class="quickHd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr class="hover-row">
+<td width="16px" class="Frm_MsgIndent"><a name="xx3087006xx"></a><img height="16px" width="16px" align="top" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/msg_general.gif" alt="General"></td><td class="Frm_MsgSubject hover-container"><a class="message-link" name="3087006" parent="0" thread="3087006" href="http://www.codeproject.com/Messages/3087006/Good.aspx">Good</a> <a onclick="return Pin(this);" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#" title="Click to pin message"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/pin.gif" border="0" align="top" alt="Pin" width="13px" height="12px"></a></td><td class="Frm_MsgIcon"><img border="0" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/member_sm.gif" title="member" alt="member" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=6304570">James_2009</a></td><td class="Frm_MsgDate" style="vertical-align:top;white-space:nowrap;">12:16 18 Jun '09 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F3087006_h1" style="display:none;">
+<td width="100%"><table class="quickBd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width:16px;"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/t(2).gif" height="1px" width="16px" alt=""></td><td class="MsgBd BdSel "><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">Useful article.<br></td>
+</tr><tr style="vertical-align:middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f37292%2fDisable-Print-Screen-Key-and-All-Keyboard-Keys-in">Sign In</a>·<a class="toolbar" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in/?fid=1542289&df=90&mpp=25&sort=Position&tid=3087006" title="View Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/3087006/Good.aspx" title="Get permanent link">Permalink</a></td><td class="msg-footer" style="text-align:right;"><span id="MVF3087006" style="white-space:nowrap;">2.00/5 (3 votes) </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="root msg-divide"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/t(2).gif" border="0" width="1px" height="1px" alt=""></td>
+</tr><tr class="MsgHd Rt HdUnSel " id="F3086942_h0">
+<td width="100%"><table class="quickHd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr class="hover-row">
+<td width="16px" class="Frm_MsgIndent"><a name="xx3086942xx"></a><img height="16px" width="16px" align="top" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/msg_general.gif" alt="General"></td><td class="Frm_MsgSubject hover-container"><a class="message-link" name="3086942" parent="0" thread="3086942" href="http://www.codeproject.com/Messages/3086942/Waste-of-time.aspx">Waste of time...</a> <a onclick="return Pin(this);" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#" title="Click to pin message"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/pin.gif" border="0" align="top" alt="Pin" width="13px" height="12px"></a></td><td class="Frm_MsgIcon"><img border="0" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/member_sm.gif" title="member" alt="member" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=597946">Axel Rietschin</a></td><td class="Frm_MsgDate" style="vertical-align:top;white-space:nowrap;">11:22 18 Jun '09 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F3086942_h1" style="display:none;">
+<td width="100%"><table class="quickBd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width:16px;"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/t(2).gif" height="1px" width="16px" alt=""></td><td class="MsgBd BdSel "><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">Anyone with a utility like HttpWatch or similar utility will grab *all* of your page's content without any trouble.<br></td>
+</tr><tr style="vertical-align:middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f37292%2fDisable-Print-Screen-Key-and-All-Keyboard-Keys-in">Sign In</a>·<a class="toolbar" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in/?fid=1542289&df=90&mpp=25&sort=Position&tid=3086942" title="View Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/3086942/Waste-of-time.aspx" title="Get permanent link">Permalink</a></td><td class="msg-footer" style="text-align:right;"><span id="MVF3086942" style="white-space:nowrap;">3.17/5 (5 votes) </span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="msg-divide"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/t(2).gif" border="0" width="1px" height="1px" alt=""></td>
+</tr><tr class="MsgHd HdUnSel " id="F3088889_h0">
+<td width="100%"><table class="quickHd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr class="hover-row">
+<td width="34px" class="Frm_MsgIndent"><a name="xx3088889xx"></a><img height="16px" width="16px" align="top" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/msg_general.gif" alt="General"></td><td class="Frm_MsgSubject hover-container"><a class="message-link" name="3088889" parent="3086942" thread="3086942" href="http://www.codeproject.com/Messages/3088889/Re-Waste-of-time.aspx">Re: Waste of time...</a> <a onclick="return Pin(this);" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#" title="Click to pin message"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/pin.gif" border="0" align="top" alt="Pin" width="13px" height="12px"></a></td><td class="Frm_MsgIcon"><img border="0" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/member_sm.gif" title="member" alt="member" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=5579690">Mi.Chal.</a></td><td class="Frm_MsgDate" style="vertical-align:top;white-space:nowrap;">0:15 20 Jun '09 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F3088889_h1" style="display:none;">
+<td width="100%"><table class="quickBd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width:34px;"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/t(2).gif" height="1px" width="34px" alt=""></td><td class="MsgBd BdSel "><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">Or use some addon in browser, e.g. ScreenGrab for Firefox<br></td>
+</tr><tr style="vertical-align:middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f37292%2fDisable-Print-Screen-Key-and-All-Keyboard-Keys-in">Sign In</a>·<a class="toolbar" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in/?fid=1542289&df=90&mpp=25&sort=Position&tid=3086942" title="View Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/3088889/Re-Waste-of-time.aspx" title="Get permanent link">Permalink</a></td><td class="msg-footer" style="text-align:right;"><span id="MVF3088889" style="white-space:nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr class="quick">
+<td class="msg-divide"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/t(2).gif" border="0" width="1px" height="1px" alt=""></td>
+</tr><tr class="MsgHd HdUnSel " id="F3370212_h0">
+<td width="100%"><table class="quickHd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr class="hover-row">
+<td width="52px" class="Frm_MsgIndent"><a name="xx3370212xx"></a><img height="16px" width="16px" align="top" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/msg_general.gif" alt="General"></td><td class="Frm_MsgSubject hover-container"><a class="message-link" name="3370212" parent="3088889" thread="3086942" href="http://www.codeproject.com/Messages/3370212/Re-Waste-of-time.aspx">Re: Waste of time...</a> <a onclick="return Pin(this);" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in#" title="Click to pin message"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/pin.gif" border="0" align="top" alt="Pin" width="13px" height="12px"></a></td><td class="Frm_MsgIcon"><img border="0" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/member_sm.gif" title="member" alt="member" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=861327">Tatworth</a></td><td class="Frm_MsgDate" style="vertical-align:top;white-space:nowrap;">7:47 16 Feb '10 &nbsp;</td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F3370212_h1" style="display:none;">
+<td width="100%"><table class="quickBd" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="Frm_MsgIndent" style="width:52px;"><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/t(2).gif" height="1px" width="52px" alt=""></td><td class="MsgBd BdSel "><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">or run the web browser inside a virtual machine and do screen grab from the host machine!<br></td>
+</tr><tr style="vertical-align:middle;">
+<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f37292%2fDisable-Print-Screen-Key-and-All-Keyboard-Keys-in">Sign In</a>·<a class="toolbar" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in/?fid=1542289&df=90&mpp=25&sort=Position&tid=3086942" title="View Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/3370212/Re-Waste-of-time.aspx" title="Get permanent link">Permalink</a></td><td class="msg-footer" style="text-align:right;"><span id="MVF3370212" style="white-space:nowrap;"></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr>
+<td><img src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/t(2).gif" border="0" width="1px" height="5px" alt=""></td>
+</tr>
+</tbody></table></td>
+</tr><tr>
+<td><table width="100%" cellpadding="2px" cellspacing="0">
+<tbody><tr class="forum-footer">
+<td>Last Visit: 19:00 31 Dec '99  &nbsp; &nbsp; Last Update: 0:34 21 Jan '12 </td><td style="text-align:right;white-space:nowrap;"><input id="_mbnUrl" type="hidden" value="/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in/?fid=1542289&amp;df=90&amp;mpp=25&amp;noise=3&amp;prof=False&amp;sort=Position&amp;view=Quick&amp;fr=15"><b>1</b></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table>
+</div><p class="small-text"><img align="top" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/msg_general.gif" width="16px" height="16px" alt="General"> General &nbsp;&nbsp; <img align="top" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/msg_news.gif" width="16px" height="16px" alt="News"> News &nbsp;&nbsp; <img align="top" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/msg_idea.gif" width="16px" height="16px" alt="Suggestion"> Suggestion &nbsp;&nbsp; <img align="top" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/msg_question.gif" width="16px" height="16px" alt="Question"> Question &nbsp;&nbsp; <img align="top" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/msg_bug.gif" width="16px" height="16px" alt="Bug"> Bug &nbsp;&nbsp; <img align="top" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/msg_answer.gif" width="16px" height="16px" alt="Answer"> Answer &nbsp;&nbsp; <img align="top" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/msg_joke.gif" width="16px" height="16px" alt="Joke"> Joke &nbsp;&nbsp; <img align="top" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/msg_rant.gif" width="16px" height="16px" alt="Rant"> Rant &nbsp;&nbsp; <img align="top" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/msg_admin.gif" width="16px" height="16px" alt="Admin"> Admin &nbsp;&nbsp; </p><p class="small-text">Use Ctrl+Left/Right to switch messages, Ctrl+Up/Down to switch threads, Ctrl+Shift+Left/Right to switch pages.</p>
+
+					
+					<div class="theme1-background" style="height:2px"></div>
+
+					<div class="extended tiny-text">
+						<div class="row">
+							<div class="float-left">
+								<a id="ctl00_PermaLink" href="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®.htm">Permalink</a> | 
+								<a id="ctl00_AdvertiseLink" href="http://lakequincy.com/">Advertise </a> |
+								<a id="ctl00_PrivacyLink" href="http://www.codeproject.com/info/privacy.aspx">Privacy</a> |
+								<a id="ctl00_Mobile" rel="nofollow" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in/?display=Mobile">Mobile</a>
+								<br>
+								
+								Web01 |
+								2.5.120120.1 |
+								Last Updated 18 Jun 2009								
+							</div>
+							<div class="float-right align-right">
+								Article Copyright 2009 by Wael Sayed<br>Everything else
+								Copyright © <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&to=webmaster@codeproject.com" title="[GMCP] Compose a new mail to CodeProject" target="_blank" rel="noreferrer">CodeProject</a>, 1999-2012 <br>
+								<a id="ctl00_TermsOfUseLink" href="http://www.codeproject.com/info/TermsOfUse.aspx">Terms of Use</a>
+							</div>
+
+							
+
+
+<div class="page-width">
+Layout: <a id="ctl00_PageWidth_FixedT" title="Fixed width layout" rel="nofollow" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in/?PageFlow=FixedWidth">fixed</a>
+|
+<a id="ctl00_PageWidth_FluidT" title="Fluid layout" rel="nofollow" href="http://www.codeproject.com/Articles/37292/Disable-Print-Screen-Key-and-All-Keyboard-Keys-in/?PageFlow=Fluid">fluid</a>
+</div>
+
+
+
+						</div>
+					</div>
+					
+
+				<br clear="all">
+		
+				
+				</div>
+
+				<div id="ctl00_ContentSide" class="text-sidebar">
+					<script type="text/javascript">document.write(unescape('%0d%0a%0d%0a%3cdiv class%3d%22results%22%3e%0d%0a%0d%0a%09%3cdiv class%3d%22container-adwords%22%3e%0d%0a%09%09%3ca id%3d%22ctl00_RelatedAds_RelatedResults_ctl01_Link%22 href%3d%22%2fscript%2fCatalog%2fRedir.aspx%3fctid%3d2344%26amp%3bcttype%3d2%22 target%3d%22_blank%22%3e%3cspan id%3d%22ctl00_RelatedAds_RelatedResults_ctl01_Title%22 class%3d%22title%22%3eAspose.Pdf for Java%3c%2fspan%3e%3cbr %2f%3e%0d%0a%09%09%09%3cspan id%3d%22ctl00_RelatedAds_RelatedResults_ctl01_Teaser%22 class%3d%22desc%22%3eAspose.Pdf is a Java Pdf component to create Pdf documents without...%3c%2fspan%3e%3cbr %2f%3e%0d%0a%09%09%09%3cspan id%3d%22ctl00_RelatedAds_RelatedResults_ctl01_Url%22 class%3d%22link%22%3ewww.aspose.com%3c%2fspan%3e%3c%2fa%3e%0d%0a%09%3c%2fdiv%3e%0d%0a%0d%0a%09%3cdiv class%3d%22container-adwords%22%3e%0d%0a%09%09%3ca id%3d%22ctl00_RelatedAds_RelatedResults_ctl02_Link%22 href%3d%22%2fscript%2fCatalog%2fRedir.aspx%3fctid%3d2346%26amp%3bcttype%3d2%22 target%3d%22_blank%22%3e%3cspan id%3d%22ctl00_RelatedAds_RelatedResults_ctl02_Title%22 class%3d%22title%22%3eAspose.Words for .NET%3c%2fspan%3e%3cbr %2f%3e%0d%0a%09%09%09%3cspan id%3d%22ctl00_RelatedAds_RelatedResults_ctl02_Teaser%22 class%3d%22desc%22%3eAspose.Words is a .NET word processing component to read%2c write%2c modify...%3c%2fspan%3e%3cbr %2f%3e%0d%0a%09%09%09%3cspan id%3d%22ctl00_RelatedAds_RelatedResults_ctl02_Url%22 class%3d%22link%22%3ewww.aspose.com%3c%2fspan%3e%3c%2fa%3e%0d%0a%09%3c%2fdiv%3e%0d%0a%0d%0a%3c%2fdiv%3e%0d%0a'));</script>
+
+<div class="results">
+
+	<div class="container-adwords">
+		<a id="ctl00_RelatedAds_RelatedResults_ctl01_Link" href="http://www.codeproject.com/script/Catalog/Redir.aspx?ctid=2344&cttype=2" target="_blank"><span id="ctl00_RelatedAds_RelatedResults_ctl01_Title" class="title">Aspose.Pdf for Java</span><br>
+			<span id="ctl00_RelatedAds_RelatedResults_ctl01_Teaser" class="desc">Aspose.Pdf is a Java Pdf component to create Pdf documents without...</span><br>
+			<span id="ctl00_RelatedAds_RelatedResults_ctl01_Url" class="link">www.aspose.com</span></a>
+	</div>
+
+	<div class="container-adwords">
+		<a id="ctl00_RelatedAds_RelatedResults_ctl02_Link" href="http://www.codeproject.com/script/Catalog/Redir.aspx?ctid=2346&cttype=2" target="_blank"><span id="ctl00_RelatedAds_RelatedResults_ctl02_Title" class="title">Aspose.Words for .NET</span><br>
+			<span id="ctl00_RelatedAds_RelatedResults_ctl02_Teaser" class="desc">Aspose.Words is a .NET word processing component to read, write, modify...</span><br>
+			<span id="ctl00_RelatedAds_RelatedResults_ctl02_Url" class="link">www.aspose.com</span></a>
+	</div>
+
+</div>
+
+
+					
+
+					
+
+					<div style="width:160px;margin: 10px 0;">
+						<div class="lqm_ad" lqm_publisher="lqm.codeproject.site" lqm_zone="ros" lqm_format="160x600" lqm_tags="C#1.0,C#2.0,C#3.0,.NET3.5,C#,ASP.NET,Javascript,CSS,.NET,Dev,Beginner"><iframe id="lqmad4" width="160" height="600" marginwidth="0" marginheight="0" frameborder="0" scrolling="no"></iframe></div>
+					</div>
+
+					
+	<div class="announce">
+	<div id="ctl00_RelatedArticles_RelatedResults_ctl00_header" class="announce-header">See Also...</div>
+	<div class="announce-content">	
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl02_Link" class="title" href="http://www.codeproject.com/KB/scripting/JavaScriptConsole.aspx">JavaScript Console - A DOS-like Console for Browsers</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl03_Link" class="title" href="http://www.codeproject.com/KB/scripting/javascript_print_page.aspx">using javascript create printer-friendly pages.</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl04_Link" class="title" href="http://www.codeproject.com/KB/books/0764549146_8.aspx">Component-Based Development with Visual C#</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl05_Link" class="title" href="http://www.codeproject.com/KB/HTML/print-stylesheet.aspx">Print Stylesheet:  The Definitive Guide</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl06_Link" class="title" href="http://www.codeproject.com/KB/printing/autoprint.aspx">Keep Your InkJet Print Head Clean</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl07_Link" class="title" href="http://www.codeproject.com/KB/applications/PDFViewerControl.aspx">PDF Viewer Control Without Acrobat Reader Installed</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl08_Link" class="title" href="http://www.codeproject.com/KB/HTML/ChangePageStyles.aspx">Changing Page Style for Printing</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl09_Link" class="title" href="http://www.codeproject.com/KB/HTML/LabelSoftware.aspx">Building a Label Printing Software using HTML, CSS and JavaScript</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl10_Link" class="title" href="http://www.codeproject.com/KB/printing/PrintingFormReport.aspx">Printing a Form in a report fashion (release 2.2)</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl11_Link" class="title" href="http://www.codeproject.com/KB/printing/printhml.aspx">Print HTML in C# with or without the web browser control and the print dialog</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl12_Link" class="title" href="http://www.codeproject.com/KB/dotnet/LPrintWriter.aspx">Writing Text to a Printer with LPrintWriter</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl13_Link" class="title" href="http://www.codeproject.com/KB/miscctrl/simplebrowserformfc.aspx">Using the WebBrowser control, simplified</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl14_Link" class="title" href="http://www.codeproject.com/KB/aspnet/ClickOnceJavaScript.aspx">ClickOnce JavaScript</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl15_Link" class="title" href="http://www.codeproject.com/KB/shell/iesaveas.aspx">Automated IE SaveAs MHTML</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl16_Link" class="title" href="http://www.codeproject.com/KB/HTML/DisabledEffect.aspx">Disable Parent Window</a>
+		
+	</div>
+	
+	</div>
+	</div>
+	
+
+
+					
+
+					
+<div class="announce">
+<div class="announce-header">The Daily Insider</div>
+<div class="announce-content">
+
+<div><a id="ctl00_News_News_ctl01_Link" href="http://citizen428.net/archives/434">30 free programming books</a></div>
+
+Daily News: <a id="ctl00_News_News_ctl02_Subscribe" href="http://www.codeproject.com/Feature/Insider/">Signup now</a>.
+</div>
+</div>
+		
+
+				</div>
+
+			</div>
+			
+
+		</div>
+		
+
+	</div>
+</div>
+
+
+<div style="display:none;" id="lqm_AdTable">
+	
+</div>
+
+<script type="text/javascript" language="Javascript" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/jquery.min.js"></script><script type="text/javascript">//<![CDATA[
+if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='/script/JS/jquery-1.6.2.min.js' type='text/javascript' %3E%3C/script%3E"));
+}//]]></script>
+<script type="text/javascript" language="Javascript" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/article.min.js"></script>
+<script type="text/javascript" language="Javascript" src="./Disable Print Screen Key and All Keyboard Keys in ASP.NET Page - CodeProject®_files/m.min.js"></script>
+<script type="text/javascript" language="Javascript">//<![CDATA[
+function markAllText(){
+ markTextInElement('disable','contentdiv');
+ markTextInElement('print','contentdiv');
+ markTextInElement('screen','contentdiv');
+ markTextInElement('html','contentdiv');
+}
+$(function(){markAllText()});
+var socialLinks = new social();
+socialLinks.PlaceholderId="ATD";socialLinks.ObjectId=37292;
+socialLinks.ObjectTypeId=2;
+socialLinks.addtoMethod=1;
+socialLinks.Horizontal=false;
+socialLinks.Showname=true;
+socialLinks.setupLinks("socialLinks", escape(document.location.href),escape(document.title), 100, 0, "small-text Bold", "AddTo");
+socialLinks.setupMenu();
+$(document).ready(function() {   $('.alert-bar').slideDown('fast');   $('.alert-bar a.close-notify').click(function() {      $('.alert-bar').slideUp('fast');        return false;    });});
+if($.LqmAds)$.LqmAds();
+var oSrchFlt = false, oSrchBox=false,srchBoxFoc=false;
+$(document).ready(function() {
+ InitWatermark('sb_tb', 'Search');
+ var sbar = $('#sb_tb'); 
+ var sfilter = $('#SearchFilter');
+ if (sbar && sfilter) {
+  sfilter.removeClass('popup'); sfilter.hide();
+  sbar.blur(function() { if (!oSrchFlt)sfilter.hide();srchBoxFoc=false; });
+  sbar.focus(function() { oSrchFlt=false;srchBoxFoc=true;sfilter.show(); });
+  sbar.mouseleave(function() { oSrchBox=false; });
+  sbar.mouseover(function() { oSrchBox=true; });
+  sfilter.mouseleave(function() { oSrchFlt=false; if (!srchBoxFoc&&!oSrchBox)sfilter.hide();});
+  sfilter.mouseover(function() { oSrchFlt=true; });
+ }
+});
+$(document).ready(function() { anchorAnimate(); });
+$("#ctl00_RateArticle_RateItemWrapper").removeClass("container-rating");$('#clear-rate_ctl00_RateArticle_RCD').click(function () { $('#ctl00_RateArticle_RCD').hide(); return false;});
+function PostBack_ctl00_RateArticle_RateItemWrapper() {
+  return rateItem(37292,2,1,true,true,3);
+}
+function ChkRtctl00_RateArticle(val, objId) {if (val<=3||true) {
+$('div[name=RateItem_' + objId + '] .rating-comment').css("display","");}
+else $('div[name=RateItem_' + objId + '] .rating-comment').css("display","none");}
+
+
+//]]>
+</script>
+
+
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-1735123-1']);
+	_gaq.push(['_trackPageview']);
+	_gaq.push(['_setDomainName', 'www.codeproject.com']);
+	_gaq.push(['_setSessionTimeout', '1200']); 
+
+	(function () {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})(); 
+</script>
+
+
+
+<canvas id="cv1" width="1px" height="1px" style="position:absolute;left:0;top:0;pointer-events:none"></canvas><canvas id="cv2" width="1px" height="1px" style="position:absolute;left:0;top:0;pointer-events:none"></canvas></body></html>
