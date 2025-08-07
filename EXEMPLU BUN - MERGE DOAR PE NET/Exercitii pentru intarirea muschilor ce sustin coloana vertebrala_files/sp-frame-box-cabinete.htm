@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd ">
+<!-- saved from url=(0084)http://www.romedic.ro/includ/sp-frame-box-cabinete.php?critidcat=-g15-&critidsubcat= -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Super Servicii Medicale</title>
+
+<style type="text/css">
+<!--
+body{font-family:Trebuchet MS,Arial;font-size: 13px;color: #51505F;background-color:#ffffff;padding:0;margin:0;text-align: left;}
+table,td,th,div {text-align: left;margin:0;border:none;}
+img{border:0; padding:0;}
+
+/* box smart cabinete*/
+#sp_container2{width:300px;background: url(http://www.romedic.ro/imagini/sp/bgr-sl-300-2.gif) repeat-y; text-align:left; display:block; overflow:hidden; margin:0 0 10px 0;}
+#sp_container2 img{border:0;}
+#sp_det2{width:280px; height:115px; background: url(http://www.romedic.ro/imagini/sp/bgr-header-300-2.png) no-repeat top; padding:49px 10px 0px 10px; display:block; overflow:hidden;}
+#sp_bot2{width:280px;background: url(http://www.romedic.ro/imagini/sp/bgr-bot-300-2.gif) no-repeat bottom;padding:3px 10px 0 10px; display:block; overflow:hidden;}
+#sp_navigare2{width:130px; float:right; margin:0 0 2px 0;}
+#sp_detalii2{float:left;}
+#sp_nume2{height:25px; display:block; overflow:hidden;}
+#sp_nume2 a:link, #sp_nume2 a:visited{color:#869728; font-size:17px; text-decoration:underline;}
+#sp_nume2 a:hover{color:#D65B26; font-size:17px; text-decoration:none;}
+#sp_poza2{width:110px;float:right; margin:8px 0 0 5px; text-align:center;}
+#sp_des2{color:#777F90; font-size:11px; margin: 5px 0 5px 0; display : block;}
+#sp_pret2{color:#B0C635; font-size:17px; float:left; padding:2px 0 0 0;}
+#sp_firma2{color:#36435C; font-size:11px;background: url(http://www.romedic.ro/imagini/sp/border-o.gif) repeat-x bottom; margin:3px 0 3px 0; padding:0 0 2px 0;}
+
+-->
+</style>
+<script type="text/javascript">
+//3 functii pentru smartboxuri
+function createCookie(name,value,days) {
+	if (days) {
+		var date = new Date();
+		date.setTime(date.getTime()+(days*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString();
+	}
+	else var expires = "";
+	document.cookie = name+"="+value+expires+"; path=/";
+}
+function readCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	}
+	return null;
+}
+
+function eraseCookie(name) {
+	createCookie(name,"",-1);
+}
+</script>
+<link rel="stylesheet" type="text/css" href="chrome-extension://lfjamigppmepikjlacjdpgjaiojdjhoj/css/menu.css"></head>
+<body>
+
+<script language="JavaScript" type="text/JavaScript">
+var val0=readCookie("pozitie_cab");
+if (val0==null)
+{
+ 	createCookie("pozitie_cab",0,10);
+}
+var pozitie_initiala=new Number;
+pozitie_initiala=1*1;
+//protectie depasire nr total produse
+if (pozitie_initiala > 2) { pozitie_initiala=0; }
+
+function schimba_box2(sens)
+{
+	var pozitie_v=new Number;
+	if (sens==1)
+	{
+			pozitie_v=1*pozitie_initiala-1;
+			if (pozitie_v >= 0){} else { pozitie_v=2; }	
+	}
+	if (sens==2)
+	{
+			pozitie_v=1*pozitie_initiala+1;
+			if (pozitie_v>2) { pozitie_v=0; }	
+	}
+	pozitie_initiala=pozitie_v;
+	createCookie("pozitie_cab",pozitie_initiala,10); 
+	targ='frameSalvare2';
+	eval(targ+".location='/includ/sp_schimba_box2.php?critidcat=-g15-&pozitie_cab="+pozitie_v+"'");	 
+}
+createCookie("pozitie_cab",pozitie_initiala,10);
+</script>
+
+<div id="sp_container2">
+<iframe src="" name="frameSalvare2" id="frameSalvare2" width="0" height="0" scrolling="no" frameborder="0"> Browserul dvs nu suporta iframes !!! </iframe>
+<div id="sp_det2">
+    <div id="sp_nume2">
+    	<span id="s_sp_nume2">
+        <a rel="nofollow" href="http://www.romedic.ro/includ/sp_redirect.php?tip=2&link=www.reliefromania.com&id=386" target="_blank"><b>Vrei sa renunti la fumat?</b></a></span>
+        &nbsp;
+    </div>
+    <div id="sp_poza2">
+        <span id="s_sp_poza2">
+        <a rel="nofollow" href="http://www.romedic.ro/includ/sp_redirect.php?tip=2&link=www.reliefromania.com&id=386" target="_blank">
+        <img src="arata_img(1).php" alt="Detalii">
+        </a>
+        </span>
+    </div>
+    <div id="sp_des2"><span id="s_sp_des2">Companie germana, cu peste 10 ani de experienta in domeniu. Tratamente soft-laser,fara durere, medicamente sau efecte secundare.</span></div>
+</div>
+<div id="sp_bot2">
+	<div id="sp_firma2"><span id="s_sp_firma2">TERAPIE SOFT-LASER - PITESTI</span></div>
+    <div id="sp_navigare2">
+    <a href="http://www.romedic.ro/includ/sp-frame-box-cabinete.php?critidcat=-g15-&critidsubcat=#" onclick="schimba_box2(2); return false;" style="float:right;"><img src="but-inainte.png" alt="Inainte"></a>
+    <div style="float:right; font-size:12px; padding:5px 0 0 0;">alte oferte</div>
+    <a href="http://www.romedic.ro/includ/sp-frame-box-cabinete.php?critidcat=-g15-&critidsubcat=#" onclick="schimba_box2(1); return false;" style="float:right;"><img src="but-inapoi.png" alt="Inapoi"></a>
+    </div>
+	<div id="sp_pret2"><span id="s_sp_pret2">0743 84 00 63</span></div>
+</div>
+          
+</div>
+
+
+</body></html>

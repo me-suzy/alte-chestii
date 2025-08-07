@@ -1,0 +1,12 @@
+bmone2n.addAd("5219.2.1.10","<!-- spir.czMonS[__5219.2.1.10__] --><scr"+"ipt language=JavaScript>document.write(\"<!-- ROmedic-content-728x90 -->\\n<div id='div-gpt-ad-1384119660563-13' style='width:728px; height:90px;'>\\n<SCR\"+\"IPT type='text/javascript'>\\ngoogletag.cmd.push(function() { googletag.display('div-gpt-ad-1384119660563-13'); });\\n<\"+\"/SCR\"+\"IPT>\\n</div>\");\n//--><"+"/scr"+"ipt><!-- spir.czMonE -->",false);
+
+if(typeof _NgSnt=='undefined' && window.location.protocol!='https:' && 5219!=5478){
+var _NgUrl='http://arbomediaro.nuggad.net/bk?nuggn=940807539&rnd='+Math.random();
+if(0.2>Math.random()){
+ _NgUrl +='&nuggl='+encodeURIComponent('http://go.gba.bbelements.com/please/showit/0/0/0/0/?typkodu=js&banhash=305467453&banner=83270_0&nug4bbmedia=NUGGVARS');
+}
+var _tMp=new Image().src=_NgUrl;
+_NgSnt=1;
+}
+
+

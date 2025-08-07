@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd ">
+<!-- saved from url=(0083)http://www.romedic.ro/includ/sp-frame-box-produse.php?critidcat=-g15-&critidsubcat= -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Super Oferte la Produse Medicale</title>
+
+<style type="text/css">
+<!--
+body{font-family:Trebuchet MS,Arial;font-size: 13px;color: #51505F;background-color:#ffffff;padding:0;margin:0;text-align: left;}
+table,td,th,div {text-align: left;margin:0;border:none;}
+img{border:0; padding:0;}
+
+/* box smart prod*/
+#sp_container{width:300px;background: url(http://www.romedic.ro/imagini/sp/bgr-sl-300.png) repeat-y; text-align:left; display:block; overflow:hidden; margin:0 0 10px 0;}
+#sp_container img{border:0;}
+#sp_det{width:280px; height:135px; background: url(http://www.romedic.ro/imagini/sp/bgr-header-300.png) no-repeat top; padding:49px 10px 0px 10px; display:block; overflow:hidden;}
+#sp_bot{width:280px;background: url(http://www.romedic.ro/imagini/sp/bgr-bot-300.png) no-repeat bottom;padding:3px 10px 0 10px; display:block; overflow:hidden;}
+#sp_navigare{width:150px;float:right; margin:0 0 4px 0;}
+#sp_detalii{width:110px;float:left;}
+#sp_nume{height:25px; display:block; overflow:hidden;}
+#sp_nume a:link, #sp_nume a:visited{color:#36435C; font-size:17px; text-decoration:none;}
+#sp_nume a:hover{color:#D65B26; font-size:17px; text-decoration:none;}
+#sp_poza{width:110px;float:right; margin:8px 0 0 5px; text-align:center;}
+#sp_des{color:#777F90; font-size:11px; margin: 5px 0 5px 0; display: block;}
+#sp_pret{color:#D65B26; font-size:17px;}
+#sp_firma{color:#B0B6BF; font-size:11px;background: url(http://www.romedic.ro/imagini/sp/border-o.gif) repeat-x bottom; margin:3px 0 3px 0; padding:0 0 2px 0;}
+
+-->
+</style>
+<script type="text/javascript">
+//3 functii pentru smartboxuri
+function createCookie(name,value,days) {
+	if (days) {
+		var date = new Date();
+		date.setTime(date.getTime()+(days*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString();
+	}
+	else var expires = "";
+	document.cookie = name+"="+value+expires+"; path=/";
+}
+function readCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	}
+	return null;
+}
+
+function eraseCookie(name) {
+	createCookie(name,"",-1);
+}
+</script>
+<link rel="stylesheet" type="text/css" href="chrome-extension://lfjamigppmepikjlacjdpgjaiojdjhoj/css/menu.css"></head>
+<body>
+	                
+
+<script type="text/JavaScript">
+var val0=readCookie("pozitie");
+if (val0==null)
+{
+ 	createCookie("pozitie",0,10);
+}
+var pozitie_initiala=new Number;
+pozitie_initiala=1*0;
+//protectie depasire nr total produse
+if (pozitie_initiala > 5) { pozitie_initiala=0; }
+
+function schimba_box(sens)
+{
+	var pozitie_v=new Number;
+	if (sens==1)
+	{
+			pozitie_v=1*pozitie_initiala-1;
+			if (pozitie_v >= 0){} else { pozitie_v=5; }	
+	}
+	if (sens==2)
+	{
+			pozitie_v=1*pozitie_initiala+1;
+			if (pozitie_v>5) { pozitie_v=0; }	
+	}
+	pozitie_initiala=pozitie_v;
+	createCookie("pozitie",pozitie_initiala,10);
+	targ='frameSalvare';
+	eval(targ+".location='/includ/sp_schimba_box.php?pozitie="+pozitie_v+"'");	
+}
+createCookie("pozitie",pozitie_initiala,10);
+</script>
+
+<div id="sp_container">
+<iframe src="" name="frameSalvare" id="frameSalvare" width="0" height="0" scrolling="no" frameborder="0"> Browserul dvs nu suporta iframes !!! </iframe>
+<div id="sp_det">
+    <div id="sp_nume">
+    	<span id="s_sp_nume"><a rel="nofollow" href="http://www.romedic.ro/includ/sp_redirect.php?link=www.oncoshop.ro/component/virtuemart/?page=shop.product_details&flypage=flypage-ask.tpl&product_id=34&category_id=22&id=264" target="_blank"><b>Vitamina C in forma injectabila</b></a></span>
+    </div>
+    <div id="sp_poza">
+        <span id="s_sp_poza">
+        <a rel="nofollow" href="http://www.romedic.ro/includ/sp_redirect.php?link=www.oncoshop.ro/component/virtuemart/?page=shop.product_details&flypage=flypage-ask.tpl&product_id=34&category_id=22&id=264" target="_blank">
+        <img src="arata_img(2).php" alt="Detalii">
+        </a>
+        </span>
+    </div>
+    <div id="sp_des"><span id="s_sp_des">Ajuta la functionarea sistemului imunitar. Are efect antioxidant, de protectie celulara, de distrugere si prevenire a cancerului.</span></div>
+	<div id="sp_pret"><span id="s_sp_pret">336 RON</span></div>
+</div>
+<div id="sp_bot">
+	<div id="sp_firma"><span id="s_sp_firma">ONCOSHOP</span></div>
+	<div id="sp_navigare">
+    <a href="http://www.romedic.ro/includ/sp-frame-box-produse.php?critidcat=-g15-&critidsubcat=#" onclick="schimba_box(2); return false;" style="float:right;"><img src="but-inainte.png" alt="Inainte"></a>
+    <div style="float:right; font-size:12px; padding:5px 0 0 0;">alte oferte</div>
+    <a href="http://www.romedic.ro/includ/sp-frame-box-produse.php?critidcat=-g15-&critidsubcat=#" onclick="schimba_box(1); return false;" style="float:right;"><img src="but-inapoi.png" alt="Inapoi"></a>
+    </div>
+    <div id="sp_detalii">
+        <span id="s_sp_detalii"><a rel="nofollow" href="http://www.romedic.ro/includ/sp_redirect.php?link=www.oncoshop.ro/component/virtuemart/?page=shop.product_details&flypage=flypage-ask.tpl&product_id=34&category_id=22&id=264" target="_blank">
+        <img src="detalii.png" alt="Citeste mai multe"></a></span>
+    </div>
+</div>
+
+          
+</div>
+
+
+</body></html>
